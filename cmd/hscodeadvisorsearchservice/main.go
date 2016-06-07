@@ -24,9 +24,6 @@ var indexPath = flag.String("index", "hscode-search.bleve", "index path")
 var indexName = flag.String("indexName", "ProductData", "index name")
 var db *sql.DB = nil
 
-type RespondData struct {
-	dataList []DataInfo `json:""`
-}
 type DataInfo struct {
 	ID         int64     `json:"id"`
 	DATE       time.Time `json:"Date"`
@@ -183,11 +180,12 @@ func searchIndex(c *gin.Context) {
 	}
 
 	if searchResult.Total < 0 {
-		c.JSON(http.StatusOK, fmt.Sprintf("No data found!"))
+		c.String(http.StatusOK, fmt.Sprintf("No data found!"))
 		return
 	}
 
 	// Output data
+	var resData []DataInfo
 	for _, hit := range searchResult.Hits {
 		// Write JSON data to response body
 		if id, err := strconv.ParseInt(hit.ID, 10, 64); err == nil {
@@ -197,8 +195,6 @@ func searchIndex(c *gin.Context) {
 				c.String(http.StatusInternalServerError, fmt.Sprintf("Query data: %q", err))
 				return
 			}
-
-			var resData RespondData
 
 			for rows.Next() {
 				var id int64
@@ -225,21 +221,19 @@ func searchIndex(c *gin.Context) {
 						COUNTRY:    country.String,
 						TARIFFCODE: tariffcode.String,
 						EXPLAIN:    explain.String,
-						VOTE:       vote.String}
+						VOTE:       vote.String,
+					}
 
 					// Add to array
-					resData.dataList = append(resData.dataList, dataInfo)
+					resData = append(resData, dataInfo)
 				}
 			}
 			// Close
 			rows.Close()
-
-			// Write JSON data to response body
-			c.JSON(http.StatusOK, &resData)
 		}
 	}
-
-	log.Printf("Indexing Completion!!!")
+	// Write JSON data to response body
+	c.JSON(http.StatusOK, resData)
 }
 
 func main() {
@@ -250,9 +244,6 @@ func main() {
 	}
 
 	flag.Parse()
-	
-	os.Remove(*indexPath);
-	return
 
 	var err error
 

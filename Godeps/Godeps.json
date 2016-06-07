@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/heroku/hs-code-web-search-func",
+	"ImportPath": "github.com/heroku/hscodeadvisorsearchservice",
 	"GoVersion": "go1.6",
 	"GodepVersion": "v66",
 	"Packages": [

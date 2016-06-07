@@ -1,1 +1,1 @@
-web: hs_code_web_search_func
+web: hscodeadvisorsearchservice
