@@ -39,7 +39,7 @@ type DataInfo struct {
 
 type ImportData struct {
 	ProductGroups []ProductGroup `xml:"productGroup,omitempty"` // Viet Name Trade
-	Items         []Item         `xml:"Item,omitempty"`         // Alibaba
+	ListItems     []ListItem     `xml:"ListItems,omitempty"`    // Alibaba
 }
 
 type ProductGroup struct {
@@ -50,6 +50,11 @@ type ProductGroup struct {
 type Product struct {
 	HsCode string `xml:"hsCode,omitempty"`
 	Desc   string `xml:"productDesc,omitempty"`
+}
+
+type ListItem struct {
+	ListItemsType string	 `xml:"type,attr"`
+	Items         []Item     `xml:"Item,omitempty"`
 }
 
 type Item struct {
@@ -134,23 +139,26 @@ func indexData(i bleve.Index) error {
 			}
 		}
 		// Alibaba data
-		for _, item := range importDataItem.Items {
-			// Make data info
-			dataInfo := DataInfo{
-				PRODDESC: item.ItemName,
-				PICTURE:  item.ImageURL}
+		for _, listItems := range importDataItem.ListItems {
+			for _, item := range listItems.Items {
+				// Make data info
+				dataInfo := DataInfo{
+					CATEGORY: listItems.ListItemsType,
+					PRODDESC: item.ItemName,
+					PICTURE:  item.ImageURL}
+					
+				// Insert to data base
+				var lastID int64
+				if err := db.QueryRow("INSERT INTO Products (Category, ProductDescription, Picture) VALUES ($1,$2,$3) RETURNING ID", listItems.ListItemsType, item.ItemName, item.ImageURL).Scan(&lastID); err != nil {
+					log.Fatal(err)
+					return err
+				}
 
-			// Insert to data base
-			var lastID int64
-			if err := db.QueryRow("INSERT INTO Products (ProductDescription, Picture) VALUES ($1,$2) RETURNING ID", item.ItemName, item.ImageURL).Scan(&lastID); err != nil {
-				log.Fatal(err)
-				return err
-			}
-
-			// Index
-			if err := i.Index(strconv.FormatInt(lastID, 10), dataInfo); err != nil {
-				log.Fatal(err)
-				return err
+				// Index
+				if err := i.Index(strconv.FormatInt(lastID, 10), dataInfo); err != nil {
+					log.Fatal(err)
+					return err
+				}
 			}
 		}
 	}
@@ -241,6 +249,7 @@ func main() {
 
 	if port == "" {
 		log.Fatal("$PORT must be set")
+		return
 	}
 
 	flag.Parse()
@@ -250,12 +259,13 @@ func main() {
 	db, err = sql.Open("postgres", os.Getenv("DATABASE_URL"))
 	if err != nil {
 		log.Fatalf("Error opening database: %q", err)
+		return
 	}
 
 	var CREATE_TABLE string = "CREATE TABLE IF NOT EXISTS Products (ID SERIAL PRIMARY KEY NOT NULL, Date timestamp DEFAULT CURRENT_TIMESTAMP, Category text, ProductDescription text, Picture text, WCOHSCode text, Country text, NationalTariffCode text, ExplanationSheet text, Vote text)"
-
 	if _, err := db.Exec(CREATE_TABLE); err != nil {
-		panic(err)
+		log.Fatalf("Error creating new table: %q", err)
+		return
 	}
 
 	// open the index
@@ -266,7 +276,15 @@ func main() {
 		indexMapping := bleve.NewIndexMapping()
 		dataIndex, err = bleve.New(*indexPath, indexMapping)
 		if err != nil {
-			log.Fatal(err)
+			log.Fatalf("Error creating index: %q", err)
+			return
+		}
+		
+		// Clear the table
+		var DELETE_ROWS string = "DELETE FROM Products"
+		if _, err := db.Exec(DELETE_ROWS); err != nil {
+			log.Fatalf("Error deleting all rows of new table: %q", err)
+			return
 		}
 
 		// index data in the background
