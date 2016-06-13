@@ -2,13 +2,13 @@ package main
 
 import (
 	"database/sql"
+	"encoding/json"
 	"encoding/xml"
 	"flag"
 	"fmt"
 	"github.com/blevesearch/bleve"
-	bleveHttp "github.com/blevesearch/bleve/http"
-	"github.com/gin-gonic/gin"
 	_ "github.com/lib/pq"
+	"github.com/rs/cors"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -21,8 +21,15 @@ import (
 
 var xmlDir = flag.String("xmlDir", "data/", "xml directory")
 var indexPath = flag.String("index", "hscode-search.bleve", "index path")
-var indexName = flag.String("indexName", "ProductData", "index name")
 var db *sql.DB = nil
+var dataIndex bleve.Index
+var bDBExist bool = true
+
+const (
+    DB_USER     = "postgres"
+    DB_PASSWORD = "tuandino"
+    DB_NAME     = "postgres"
+)
 
 type DataInfo struct {
 	ID         int64     `json:"id"`
@@ -112,6 +119,11 @@ func indexData(i bleve.Index) error {
 		basename := file[0 : len(file)-len(extension)]
 		os.Rename(file, basename+"_done.xml")
 	}
+	
+	// walk the directory entries for indexing
+	log.Printf("Indexing...")
+	count := 0
+	startTime := time.Now()
 
 	// Insert data to table and make indexing
 	for _, importDataItem := range importDataList {
@@ -136,6 +148,14 @@ func indexData(i bleve.Index) error {
 					log.Fatal(err)
 					return err
 				}
+				
+				count++
+				if count%1000 == 0 {
+					indexDuration := time.Since(startTime)
+					indexDurationSeconds := float64(indexDuration) / float64(time.Second)
+					timePerDoc := float64(indexDuration) / float64(count)
+					log.Printf("Indexed %d documents, in %.2fs (average %.2fms/doc)", count, indexDurationSeconds, timePerDoc/float64(time.Millisecond))
+				}
 			}
 		}
 		// Alibaba data
@@ -159,36 +179,93 @@ func indexData(i bleve.Index) error {
 					log.Fatal(err)
 					return err
 				}
+				
+				count++
+				if count%1000 == 0 {
+					indexDuration := time.Since(startTime)
+					indexDurationSeconds := float64(indexDuration) / float64(time.Second)
+					timePerDoc := float64(indexDuration) / float64(count)
+					log.Printf("Indexed %d documents, in %.2fs (average %.2fms/doc)", count, indexDurationSeconds, timePerDoc/float64(time.Millisecond))
+				}
 			}
 		}
 	}
+	
+	indexDuration := time.Since(startTime)
+	indexDurationSeconds := float64(indexDuration) / float64(time.Second)
+	timePerDoc := float64(indexDuration) / float64(count)
+	log.Printf("Indexed %d documents, in %.2fs (average %.2fms/doc)", count, indexDurationSeconds, timePerDoc/float64(time.Millisecond))
 
 	return nil
 }
 
-func searchIndex(c *gin.Context) {
-	// Get passed parameter
-	queryString := c.Query("query") // shortcut for c.Request.URL.Query().Get("query")
+func DBbuilder(rw http.ResponseWriter, req *http.Request) {
+	var err error
 
-	// Get index
-	index := bleveHttp.IndexByName(*indexName)
-	if index == nil {
-		log.Printf("index null!!!")
+	var CREATE_TABLE string = "CREATE TABLE IF NOT EXISTS Products (ID SERIAL PRIMARY KEY NOT NULL, Date timestamp DEFAULT CURRENT_TIMESTAMP, Category text, ProductDescription text, Picture text, WCOHSCode text, Country text, NationalTariffCode text, ExplanationSheet text, Vote text)"
+	if _, err = db.Exec(CREATE_TABLE); err != nil {
+		log.Fatalf("Error creating new table: %q", err)
 		return
 	}
+
+	// Creating index
+	if bDBExist == false {
+		log.Printf("Creating new index...")
+		// create a new mapping file and create a new index
+		indexMapping := bleve.NewIndexMapping()
+		dataIndex, err = bleve.New(*indexPath, indexMapping)
+		if err != nil {
+			log.Fatalf("Error creating index: %q", err)
+			return
+		}
+		
+		// Clear the table
+		var DELETE_ROWS string = "DELETE FROM Products"
+		if _, err = db.Exec(DELETE_ROWS); err != nil {
+			log.Fatalf("Error deleting all rows of new table: %q", err)
+			return
+		}
+
+		// index data in the background
+		go func() {
+			err = indexData(dataIndex)
+			if err != nil {
+				log.Fatal(err)
+			}
+		}()
+	}
+}
+
+func searchIndex(rw http.ResponseWriter, req *http.Request) {
+	if bDBExist == false {
+		log.Println("Index null")
+		rw.WriteHeader(http.StatusOK)
+		rw.Write([]byte("true"))
+		return
+	}
+	
+	// Get passed parameter
+	body, err := ioutil.ReadAll(req.Body)
+	if err != nil {
+		log.Fatalf("Error readall: %q", err)
+		return
+	}
+	
+	log.Println(string(body))
 
 	// Query data
 	// We are looking to an product data with some string which match with dotGo
-	query := bleve.NewMatchQuery(queryString)
+	query := bleve.NewMatchQuery(string(body))
 	searchRequest := bleve.NewSearchRequest(query)
-	searchResult, err := index.Search(searchRequest)
+	searchResult, err := dataIndex.Search(searchRequest)
 	if err != nil {
-		c.String(http.StatusInternalServerError, fmt.Sprintf("Search: %q", err))
+		log.Fatalf("Error readall: %q", err)
 		return
 	}
 
+	log.Println(searchResult)
 	if searchResult.Total < 0 {
-		c.String(http.StatusOK, fmt.Sprintf("No data found!"))
+		log.Fatalf("Error readall: %q", err)
 		return
 	}
 
@@ -196,11 +273,13 @@ func searchIndex(c *gin.Context) {
 	var resData []DataInfo
 	for _, hit := range searchResult.Hits {
 		// Write JSON data to response body
+		log.Println(hit.ID)
 		if id, err := strconv.ParseInt(hit.ID, 10, 64); err == nil {
+			log.Println(hit.ID)
 			// Query data
 			rows, err := db.Query("SELECT * FROM Products WHERE ID=$1", id)
 			if err != nil {
-				c.String(http.StatusInternalServerError, fmt.Sprintf("Query data: %q", err))
+				log.Fatalf("Error readall: %q", err)
 				return
 			}
 
@@ -217,7 +296,7 @@ func searchIndex(c *gin.Context) {
 				var vote sql.NullString
 
 				if err := rows.Scan(&id, &date, &category, &proddesc, &picture, &hscode, &country, &tariffcode, &explain, &vote); err != nil {
-					c.String(http.StatusInternalServerError, fmt.Sprintf("Error scanning: %q", err))
+					log.Fatalf("Error readall: %q", err)
 				} else {
 					dataInfo := DataInfo{
 						ID:         id,
@@ -240,8 +319,16 @@ func searchIndex(c *gin.Context) {
 			rows.Close()
 		}
 	}
+	
+	encoder, err := json.Marshal(resData)
+	if err != nil {
+		log.Fatalf("Error marshal: %q", err)
+		return
+	}
+	
 	// Write JSON data to response body
-	c.JSON(http.StatusOK, resData)
+	rw.Header().Set("Content-Type", "application/json")
+	rw.Write(encoder)
 }
 
 func main() {
@@ -253,68 +340,34 @@ func main() {
 	}
 
 	flag.Parse()
-
+	
+	// Database connection
 	var err error
-
-	db, err = sql.Open("postgres", os.Getenv("DATABASE_URL"))
+	dbinfo := fmt.Sprintf("user=%s password=%s dbname=%s sslmode=disable",
+        DB_USER, DB_PASSWORD, DB_NAME)
+	//db, err = sql.Open("postgres", os.Getenv("DATABASE_URL"))
+	db, err = sql.Open("postgres", dbinfo)
 	if err != nil {
 		log.Fatalf("Error opening database: %q", err)
 		return
 	}
-
-	var CREATE_TABLE string = "CREATE TABLE IF NOT EXISTS Products (ID SERIAL PRIMARY KEY NOT NULL, Date timestamp DEFAULT CURRENT_TIMESTAMP, Category text, ProductDescription text, Picture text, WCOHSCode text, Country text, NationalTariffCode text, ExplanationSheet text, Vote text)"
-	if _, err := db.Exec(CREATE_TABLE); err != nil {
-		log.Fatalf("Error creating new table: %q", err)
+	// open the index
+	dataIndex, err = bleve.Open(*indexPath)
+	if err == bleve.ErrorIndexPathDoesNotExist {
+		log.Printf("Index not exist. Plese make new index by calling DBbuilder function")
+		bDBExist = false
+	}else if err != nil {
+		log.Fatalf("Error opening data index: %q", err)
 		return
 	}
 
-	// open the index
-	dataIndex, err := bleve.Open(*indexPath)
-	if err == bleve.ErrorIndexPathDoesNotExist {
-		log.Printf("Creating new index...")
-		// create a new mapping file and create a new index
-		indexMapping := bleve.NewIndexMapping()
-		dataIndex, err = bleve.New(*indexPath, indexMapping)
-		if err != nil {
-			log.Fatalf("Error creating index: %q", err)
-			return
-		}
-		
-		// Clear the table
-		var DELETE_ROWS string = "DELETE FROM Products"
-		if _, err := db.Exec(DELETE_ROWS); err != nil {
-			log.Fatalf("Error deleting all rows of new table: %q", err)
-			return
-		}
+	mux := http.NewServeMux()
+	mux.HandleFunc("/search", searchIndex)
+	mux.HandleFunc("/DBbuilder", DBbuilder)
 
-		// index data in the background
-		go func() {
-			err = indexData(dataIndex)
-			if err != nil {
-				log.Fatal(err)
-			}
-		}()
-	} else if err != nil {
-		log.Fatal(err)
-	} else {
-		log.Printf("Opening existing index...")
-		// index data in the background
-		go func() {
-			err = indexData(dataIndex)
-			if err != nil {
-				log.Fatal(err)
-			}
-		}()
-	}
-
-	router := gin.Default()
-
-	// add the API
-	bleveHttp.RegisterIndexName(*indexName, dataIndex)
-
-	// Query string parameters are parsed using the existing underlying request object.
-	// The request responds to a url matching:  /search?query=computer
-	router.GET("/search", searchIndex)
-
-	router.Run(":" + port)
+	// cors.Default() setup the middleware with default options being
+	// all origins accepted with simple methods (GET, POST). See
+	// documentation below for more options.
+	handler := cors.Default().Handler(mux)
+	http.ListenAndServe(":"+port, handler)
 }

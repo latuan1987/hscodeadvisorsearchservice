@@ -217,6 +217,14 @@
 			"Rev": "7fcbc72f853b92b5720db4a6b8482be612daef24"
 		},
 		{
+			"ImportPath": "github.com/rs/cors",
+			"Rev": "3ca2b550f6a4333b63c845850f760a7d00412cd6"
+		},
+		{
+			"ImportPath": "github.com/rs/xhandler",
+			"Rev": "d9d9599b6aaf6a058cb7b1f48291ded2cbd13390"
+		},
+		{
 			"ImportPath": "github.com/steveyen/gtreap",
 			"Rev": "0abe01ef9be25c4aedc174758ec2d917314d6d70"
 		},
