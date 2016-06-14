@@ -1,13 +1,10 @@
 package main
 
 import (
-	"database/sql"
 	"encoding/json"
 	"encoding/xml"
 	"flag"
-	"fmt"
 	"github.com/blevesearch/bleve"
-	_ "github.com/lib/pq"
 	"github.com/rs/cors"
 	"io/ioutil"
 	"log"
@@ -21,18 +18,12 @@ import (
 
 var xmlDir = flag.String("xmlDir", "data/", "xml directory")
 var indexPath = flag.String("index", "hscode-search.bleve", "index path")
-var db *sql.DB = nil
+var batchSize = flag.Int("batchSize", 100, "batch size for indexing")
 var dataIndex bleve.Index
-var bDBExist bool = true
-
-const (
-    DB_USER     = "postgres"
-    DB_PASSWORD = "tuandino"
-    DB_NAME     = "postgres"
-)
+var globDocId uint64
 
 type DataInfo struct {
-	ID         int64     `json:"id"`
+	ID         uint64    `json:"id"`
 	DATE       time.Time `json:"Date"`
 	CATEGORY   string    `json:"Category"`
 	PRODDESC   string    `json:"ProductDescription"`
@@ -45,35 +36,29 @@ type DataInfo struct {
 }
 
 type ImportData struct {
-	ProductGroups []ProductGroup `xml:"productGroup,omitempty"` // Viet Name Trade
-	ListItems     []ListItem     `xml:"ListItems,omitempty"`    // Alibaba
+	ProductGroups []ProductGroup `xml:"productGroup"` // Viet Name Trade
+	ListItems     []ListItem     `xml:"ListItems"`    // Alibaba
 }
 
 type ProductGroup struct {
 	ProductGroupName string    `xml:"name,attr"`
-	Products         []Product `xml:"product,omitempty"`
+	Products         []Product `xml:"product"`
 }
 
 type Product struct {
-	HsCode string `xml:"hsCode,omitempty"`
-	Desc   string `xml:"productDesc,omitempty"`
+	HsCode string `xml:"hsCode"`
+	Desc   string `xml:"productDesc"`
 }
 
 type ListItem struct {
-	ListItemsType string	 `xml:"type,attr"`
-	Items         []Item     `xml:"Item,omitempty"`
+	ListItemsType string `xml:"type,attr"`
+	Items         []Item `xml:"Item"`
 }
 
 type Item struct {
-	ImageURL string          `xml:"ImageURL,omitempty"`
-	ItemName string          `xml:"ItemName,omitempty"`
-	FOBPrice string          `xml:"FOBPrice,omitempty"`
-	Detail   TechnicalDetail `xml:"TechnicalDetail,omitempty"`
-}
-
-type TechnicalDetail struct {
-	ScreenSize    string `xml:"screensize"`
-	Certification string `xml:"certification"`
+	ImageURL string `xml:"ImageURL"`
+	ItemName string `xml:"ItemName"`
+	FOBPrice string `xml:"FOBPrice"`
 }
 
 func xmlParse(filePath string) ImportData {
@@ -105,6 +90,12 @@ func findAllFiles(searchDir string) []string {
 	return fileList
 }
 
+func buildIndexMapping() (*bleve.IndexMapping, error) {
+	indexMapping := bleve.NewIndexMapping()
+
+	return indexMapping, nil
+}
+
 func indexData(i bleve.Index) error {
 
 	// Get all xml file in specified folder
@@ -119,11 +110,14 @@ func indexData(i bleve.Index) error {
 		basename := file[0 : len(file)-len(extension)]
 		os.Rename(file, basename+"_done.xml")
 	}
-	
+
 	// walk the directory entries for indexing
 	log.Printf("Indexing...")
 	count := 0
 	startTime := time.Now()
+	batch := i.NewBatch()
+	batchCount := 0
+	var err error
 
 	// Insert data to table and make indexing
 	for _, importDataItem := range importDataList {
@@ -132,23 +126,28 @@ func indexData(i bleve.Index) error {
 			for _, productItem := range productGroups.Products {
 				// Make data info
 				dataInfo := DataInfo{
+					DATE:     time.Now(),
 					CATEGORY: productGroups.ProductGroupName,
 					HSCODE:   productItem.HsCode,
 					PRODDESC: productItem.Desc}
 
-				// Insert to data base
-				var lastID int64
-				if err := db.QueryRow("INSERT INTO Products (Category, ProductDescription, WCOHSCode) VALUES ($1,$2,$3) RETURNING ID", productGroups.ProductGroupName, productItem.Desc, productItem.HsCode).Scan(&lastID); err != nil {
+				// Index
+				if err = batch.Index(strconv.FormatUint(globDocId, 10), dataInfo); err != nil {
 					log.Fatal(err)
 					return err
+				}
+				batchCount++
+
+				if batchCount >= *batchSize {
+					err = i.Batch(batch)
+					if err != nil {
+						return err
+					}
+					batch = i.NewBatch()
+					batchCount = 0
 				}
 
-				// Index
-				if err := i.Index(strconv.FormatInt(lastID, 10), dataInfo); err != nil {
-					log.Fatal(err)
-					return err
-				}
-				
+				globDocId++
 				count++
 				if count%1000 == 0 {
 					indexDuration := time.Since(startTime)
@@ -163,23 +162,28 @@ func indexData(i bleve.Index) error {
 			for _, item := range listItems.Items {
 				// Make data info
 				dataInfo := DataInfo{
+					DATE:     time.Now(),
 					CATEGORY: listItems.ListItemsType,
 					PRODDESC: item.ItemName,
 					PICTURE:  item.ImageURL}
-					
-				// Insert to data base
-				var lastID int64
-				if err := db.QueryRow("INSERT INTO Products (Category, ProductDescription, Picture) VALUES ($1,$2,$3) RETURNING ID", listItems.ListItemsType, item.ItemName, item.ImageURL).Scan(&lastID); err != nil {
-					log.Fatal(err)
-					return err
-				}
 
 				// Index
-				if err := i.Index(strconv.FormatInt(lastID, 10), dataInfo); err != nil {
+				if err = batch.Index(strconv.FormatUint(globDocId, 10), dataInfo); err != nil {
 					log.Fatal(err)
 					return err
 				}
-				
+				batchCount++
+
+				if batchCount >= *batchSize {
+					err = i.Batch(batch)
+					if err != nil {
+						return err
+					}
+					batch = i.NewBatch()
+					batchCount = 0
+				}
+
+				globDocId++
 				count++
 				if count%1000 == 0 {
 					indexDuration := time.Since(startTime)
@@ -190,7 +194,13 @@ func indexData(i bleve.Index) error {
 			}
 		}
 	}
-	
+	// flush the last batch
+	if batchCount > 0 {
+		err = i.Batch(batch)
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
 	indexDuration := time.Since(startTime)
 	indexDurationSeconds := float64(indexDuration) / float64(time.Second)
 	timePerDoc := float64(indexDuration) / float64(count)
@@ -199,71 +209,24 @@ func indexData(i bleve.Index) error {
 	return nil
 }
 
-func DBbuilder(rw http.ResponseWriter, req *http.Request) {
-	var err error
-
-	var CREATE_TABLE string = "CREATE TABLE IF NOT EXISTS Products (ID SERIAL PRIMARY KEY NOT NULL, Date timestamp DEFAULT CURRENT_TIMESTAMP, Category text, ProductDescription text, Picture text, WCOHSCode text, Country text, NationalTariffCode text, ExplanationSheet text, Vote text)"
-	if _, err = db.Exec(CREATE_TABLE); err != nil {
-		log.Fatalf("Error creating new table: %q", err)
-		return
-	}
-
-	// Creating index
-	if bDBExist == false {
-		log.Printf("Creating new index...")
-		// create a new mapping file and create a new index
-		indexMapping := bleve.NewIndexMapping()
-		dataIndex, err = bleve.New(*indexPath, indexMapping)
-		if err != nil {
-			log.Fatalf("Error creating index: %q", err)
-			return
-		}
-		
-		// Clear the table
-		var DELETE_ROWS string = "DELETE FROM Products"
-		if _, err = db.Exec(DELETE_ROWS); err != nil {
-			log.Fatalf("Error deleting all rows of new table: %q", err)
-			return
-		}
-
-		// index data in the background
-		go func() {
-			err = indexData(dataIndex)
-			if err != nil {
-				log.Fatal(err)
-			}
-		}()
-	}
-}
-
 func searchIndex(rw http.ResponseWriter, req *http.Request) {
-	if bDBExist == false {
-		log.Println("Index null")
-		rw.WriteHeader(http.StatusOK)
-		rw.Write([]byte("true"))
-		return
-	}
-	
 	// Get passed parameter
 	body, err := ioutil.ReadAll(req.Body)
 	if err != nil {
 		log.Fatalf("Error readall: %q", err)
 		return
 	}
-	
-	log.Println(string(body))
 
 	// Query data
 	// We are looking to an product data with some string which match with dotGo
-	query := bleve.NewMatchQuery(string(body))
-	searchRequest := bleve.NewSearchRequest(query)
+	query := bleve.NewMatchPhraseQuery(string(body))
+	searchRequest := bleve.NewSearchRequestOptions(query, 100, 0, false)
 	searchResult, err := dataIndex.Search(searchRequest)
 	if err != nil {
 		log.Fatalf("Error readall: %q", err)
 		return
 	}
 
-	log.Println(searchResult)
 	if searchResult.Total < 0 {
 		log.Fatalf("Error readall: %q", err)
 		return
@@ -271,61 +234,67 @@ func searchIndex(rw http.ResponseWriter, req *http.Request) {
 
 	// Output data
 	var resData []DataInfo
+
+	var id uint64
+	var category string
+	var proddesc string
+	var picture string
+	var hscode string
+	var country string
+	var tariffcode string
+	var explain string
+	var vote string
+
 	for _, hit := range searchResult.Hits {
-		// Write JSON data to response body
-		log.Println(hit.ID)
-		if id, err := strconv.ParseInt(hit.ID, 10, 64); err == nil {
-			log.Println(hit.ID)
-			// Query data
-			rows, err := db.Query("SELECT * FROM Products WHERE ID=$1", id)
-			if err != nil {
-				log.Fatalf("Error readall: %q", err)
-				return
+		doc, _ := dataIndex.Document(hit.ID)
+
+		for _, field := range doc.Fields {
+			switch name := field.Name(); name {
+			case "id":
+				id, _ = strconv.ParseUint(string(hit.ID), 10, 64)
+			case "Category":
+				category = string(field.Value()[:])
+			case "ProductDescription":
+				proddesc = string(field.Value()[:])
+			case "Picture":
+				picture = string(field.Value()[:])
+			case "WCOHSCode":
+				hscode = string(field.Value()[:])
+			case "Country":
+				country = string(field.Value()[:])
+			case "NationalTariffCode":
+				tariffcode = string(field.Value()[:])
+			case "ExplanationSheet":
+				explain = string(field.Value()[:])
+			case "Vote":
+				vote = string(field.Value()[:])
+			default:
 			}
-
-			for rows.Next() {
-				var id int64
-				var date time.Time
-				var category sql.NullString
-				var proddesc sql.NullString
-				var picture sql.NullString
-				var hscode sql.NullString
-				var country sql.NullString
-				var tariffcode sql.NullString
-				var explain sql.NullString
-				var vote sql.NullString
-
-				if err := rows.Scan(&id, &date, &category, &proddesc, &picture, &hscode, &country, &tariffcode, &explain, &vote); err != nil {
-					log.Fatalf("Error readall: %q", err)
-				} else {
-					dataInfo := DataInfo{
-						ID:         id,
-						DATE:       date,
-						CATEGORY:   category.String,
-						PRODDESC:   proddesc.String,
-						PICTURE:    picture.String,
-						HSCODE:     hscode.String,
-						COUNTRY:    country.String,
-						TARIFFCODE: tariffcode.String,
-						EXPLAIN:    explain.String,
-						VOTE:       vote.String,
-					}
-
-					// Add to array
-					resData = append(resData, dataInfo)
-				}
-			}
-			// Close
-			rows.Close()
 		}
+		// Write JSON data to response body
+		dataInfo := DataInfo{
+			ID:         id,
+			DATE:       time.Now(),
+			CATEGORY:   category,
+			PRODDESC:   proddesc,
+			PICTURE:    picture,
+			HSCODE:     hscode,
+			COUNTRY:    country,
+			TARIFFCODE: tariffcode,
+			EXPLAIN:    explain,
+			VOTE:       vote,
+		}
+
+		// Add to array
+		resData = append(resData, dataInfo)
 	}
-	
+
 	encoder, err := json.Marshal(resData)
 	if err != nil {
 		log.Fatalf("Error marshal: %q", err)
 		return
 	}
-	
+
 	// Write JSON data to response body
 	rw.Header().Set("Content-Type", "application/json")
 	rw.Write(encoder)
@@ -340,30 +309,51 @@ func main() {
 	}
 
 	flag.Parse()
-	
-	// Database connection
-	var err error
-	dbinfo := fmt.Sprintf("user=%s password=%s dbname=%s sslmode=disable",
-        DB_USER, DB_PASSWORD, DB_NAME)
-	//db, err = sql.Open("postgres", os.Getenv("DATABASE_URL"))
-	db, err = sql.Open("postgres", dbinfo)
-	if err != nil {
-		log.Fatalf("Error opening database: %q", err)
-		return
-	}
+
 	// open the index
+	var err error
 	dataIndex, err = bleve.Open(*indexPath)
 	if err == bleve.ErrorIndexPathDoesNotExist {
-		log.Printf("Index not exist. Plese make new index by calling DBbuilder function")
-		bDBExist = false
-	}else if err != nil {
-		log.Fatalf("Error opening data index: %q", err)
-		return
+		log.Printf("Creating new index...")
+		// create a mapping
+		indexMapping, err := buildIndexMapping()
+		if err != nil {
+			log.Fatal(err)
+		}
+		dataIndex, err = bleve.New(*indexPath, indexMapping)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		globDocId = 1
+
+		// index data in the background
+		go func() {
+			err = indexData(dataIndex)
+			if err != nil {
+				log.Fatal(err)
+			}
+		}()
+	} else if err != nil {
+		log.Fatal(err)
+	} else {
+		log.Printf("Opening existing index...")
+		globDocId, err = dataIndex.DocCount()
+		globDocId++
+		if err != nil {
+			log.Fatal(err)
+		}
+		// index data in the background
+		go func() {
+			err = indexData(dataIndex)
+			if err != nil {
+				log.Fatal(err)
+			}
+		}()
 	}
 
 	mux := http.NewServeMux()
 	mux.HandleFunc("/search", searchIndex)
-	mux.HandleFunc("/DBbuilder", DBbuilder)
 
 	// cors.Default() setup the middleware with default options being
 	// all origins accepted with simple methods (GET, POST). See
