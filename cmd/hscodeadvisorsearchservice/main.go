@@ -22,6 +22,10 @@ var batchSize = flag.Int("batchSize", 100, "batch size for indexing")
 var dataIndex bleve.Index
 var globDocId uint64
 
+type jsonRecvQuery struct {
+	QUERYSTRING string `json:"query"`
+}
+
 type DataInfo struct {
 	ID         uint64    `json:"id"`
 	DATE       time.Time `json:"Date"`
@@ -217,9 +221,16 @@ func searchIndex(rw http.ResponseWriter, req *http.Request) {
 		return
 	}
 
+	var recvQuery = jsonRecvQuery{}
+	err = json.Unmarshal(body, &recvQuery)
+	if err != nil {
+		log.Fatalf("Error decoding: %q", err)
+		return
+	}
+
 	// Query data
 	// We are looking to an product data with some string which match with dotGo
-	query := bleve.NewMatchPhraseQuery(string(body))
+	query := bleve.NewMatchPhraseQuery(recvQuery.QUERYSTRING)
 	searchRequest := bleve.NewSearchRequestOptions(query, 100, 0, false)
 	searchResult, err := dataIndex.Search(searchRequest)
 	if err != nil {
