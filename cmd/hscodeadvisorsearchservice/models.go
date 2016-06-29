@@ -1,4 +1,4 @@
-//  Copyright (c) 2014 Couchbase, Inc.
+//  Copyright (c) 2016 Dino Group, Inc.
 //  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
 //  except in compliance with the License. You may obtain a copy of the License at
 //    http://www.apache.org/licenses/LICENSE-2.0
@@ -7,50 +7,51 @@
 //  either express or implied. See the License for the specific language governing permissions
 //  and limitations under the License.
 
-// +build !example1
-// +build !example2
-
 package main
 
 import (
-	"github.com/blevesearch/bleve"
-	"github.com/blevesearch/bleve/analysis/analyzers/keyword_analyzer"
-	"github.com/blevesearch/bleve/analysis/language/en"
+	"time"
 )
 
-func buildIndexMapping() (*bleve.IndexMapping, error) {
+type jsonRecvQuery struct {
+	QUERYSTRING string `json:"query"`
+}
 
-	// a generic reusable mapping for english text
-	englishTextFieldMapping := bleve.NewTextFieldMapping()
-	englishTextFieldMapping.Analyzer = en.AnalyzerName
+type DataInfo struct {
+	ID         uint64    `json:"id"`
+	DATE       time.Time `json:"Date"`
+	CATEGORY   string    `json:"Category"`
+	PRODDESC   string    `json:"ProductDescription"`
+	PICTURE    string    `json:"Picture"`
+	HSCODE     string    `json:"WCOHSCode"`
+	COUNTRY    string    `json:"Country"`
+	TARIFFCODE string    `json:"NationalTariffCode"`
+	EXPLAIN    string    `json:"ExplanationSheet"`
+	VOTE       string    `json:"Vote"`
+}
 
-	// a generic reusable mapping for keyword text
-	keywordFieldMapping := bleve.NewTextFieldMapping()
-	keywordFieldMapping.Analyzer = keyword_analyzer.Name
+type ImportData struct {
+	ProductGroups []ProductGroup `xml:"productGroup"` // Viet Name Trade
+	ListItems     []ListItem     `xml:"ListItems"`    // Alibaba
+}
 
-	beerMapping := bleve.NewDocumentMapping()
+type ProductGroup struct {
+	ProductGroupName string    `xml:"name,attr"`
+	Products         []Product `xml:"product"`
+}
 
-	// name
-	beerMapping.AddFieldMappingsAt("name", englishTextFieldMapping)
+type Product struct {
+	HsCode string `xml:"hsCode"`
+	Desc   string `xml:"productDesc"`
+}
 
-	// description
-	beerMapping.AddFieldMappingsAt("description",
-		englishTextFieldMapping)
+type ListItem struct {
+	ListItemsType string `xml:"type,attr"`
+	Items         []Item `xml:"Item"`
+}
 
-	beerMapping.AddFieldMappingsAt("type", keywordFieldMapping)
-	beerMapping.AddFieldMappingsAt("style", keywordFieldMapping)
-	beerMapping.AddFieldMappingsAt("category", keywordFieldMapping)
-
-	breweryMapping := bleve.NewDocumentMapping()
-	breweryMapping.AddFieldMappingsAt("name", englishTextFieldMapping)
-	breweryMapping.AddFieldMappingsAt("description", englishTextFieldMapping)
-
-	indexMapping := bleve.NewIndexMapping()
-	indexMapping.AddDocumentMapping("beer", beerMapping)
-	indexMapping.AddDocumentMapping("brewery", breweryMapping)
-
-	indexMapping.TypeField = "type"
-	indexMapping.DefaultAnalyzer = "en"
-
-	return indexMapping, nil
+type Item struct {
+	ImageURL string `xml:"ImageURL"`
+	ItemName string `xml:"ItemName"`
+	FOBPrice string `xml:"FOBPrice"`
 }

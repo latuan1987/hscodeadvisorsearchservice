@@ -1,4 +1,4 @@
-//  Copyright (c) 2014 Couchbase, Inc.
+//  Copyright (c) 2016 Dino Group, Inc.
 //  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
 //  except in compliance with the License. You may obtain a copy of the License at
 //    http://www.apache.org/licenses/LICENSE-2.0
@@ -6,61 +6,118 @@
 //  License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
 //  either express or implied. See the License for the specific language governing permissions
 //  and limitations under the License.
+
 package main
 
 import (
+	"encoding/json"
+	"github.com/blevesearch/bleve"
+	"io/ioutil"
+	"log"
 	"net/http"
-
-	"github.com/gorilla/mux"
+	"strconv"
+	"time"
 )
 
-func staticFileRouter() *mux.Router {
-	r := mux.NewRouter()
-	r.StrictSlash(true)
-
-	// static
-	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/",
-		myFileHandler{http.FileServer(http.Dir(*staticPath))}))
-
-	// application pages
-	appPages := []string{
-		"/overview",
-		"/search",
+func searchIndex(rw http.ResponseWriter, req *http.Request) {
+	// Get passed parameter
+	body, err := ioutil.ReadAll(req.Body)
+	if err != nil {
+		log.Printf("Error reading request data: %q", err)
+		http.NotFound(rw, req)
+		return
 	}
 
-	for _, p := range appPages {
-		// if you try to use index.html it will redirect...poorly
-		r.PathPrefix(p).Handler(RewriteURL("/",
-			http.FileServer(http.Dir(*staticPath))))
+	// Decode bytes to json data
+	var recvQuery = jsonRecvQuery{}
+	err = json.Unmarshal(body, &recvQuery)
+	if err != nil {
+		log.Printf("Error decoding request data: %q", err)
+		http.Error(rw, err.Error(), http.StatusInternalServerError)
+		return
 	}
 
-	r.Handle("/", http.RedirectHandler("/static/index.html", 302))
-
-	return r
-}
-
-type myFileHandler struct {
-	h http.Handler
-}
-
-func (mfh myFileHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	if *staticEtag != "" {
-		w.Header().Set("Etag", *staticEtag)
+	// Query data
+	// We are looking to an product data with some string which match with dotGo
+	query := bleve.NewMatchPhraseQuery(recvQuery.QUERYSTRING)
+	searchRequest := bleve.NewSearchRequestOptions(query, 100, 0, false)
+	searchResult, err := dataIndex.Search(searchRequest)
+	if err != nil {
+		log.Printf("Error full text search: %q", err)
+		http.Error(rw, err.Error(), http.StatusInternalServerError)
+		return
 	}
-	mfh.h.ServeHTTP(w, r)
-}
 
-func RewriteURL(to string, h http.Handler) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		r.URL.Path = to
-		h.ServeHTTP(w, r)
-	})
-}
+	if searchResult.Total < 0 {
+		log.Printf("Total result < 0")
+		return
+	}
 
-func muxVariableLookup(req *http.Request, name string) string {
-	return mux.Vars(req)[name]
-}
+	// Output data
+	var resData []DataInfo
 
-func docIDLookup(req *http.Request) string {
-	return muxVariableLookup(req, "docID")
+	var id uint64
+	var category string
+	var proddesc string
+	var picture string
+	var hscode string
+	var country string
+	var tariffcode string
+	var explain string
+	var vote string
+
+	for _, hit := range searchResult.Hits {
+		doc, _ := dataIndex.Document(hit.ID)
+
+		for _, field := range doc.Fields {
+			switch name := field.Name(); name {
+			case "id":
+				id, _ = strconv.ParseUint(string(hit.ID), 10, 64)
+			case "Category":
+				category = string(field.Value()[:])
+			case "ProductDescription":
+				proddesc = string(field.Value()[:])
+			case "Picture":
+				picture = string(field.Value()[:])
+			case "WCOHSCode":
+				hscode = string(field.Value()[:])
+			case "Country":
+				country = string(field.Value()[:])
+			case "NationalTariffCode":
+				tariffcode = string(field.Value()[:])
+			case "ExplanationSheet":
+				explain = string(field.Value()[:])
+			case "Vote":
+				vote = string(field.Value()[:])
+			default:
+			}
+		}
+		// Write JSON data to response body
+		dataInfo := DataInfo{
+			ID:         id,
+			DATE:       time.Now(),
+			CATEGORY:   category,
+			PRODDESC:   proddesc,
+			PICTURE:    picture,
+			HSCODE:     hscode,
+			COUNTRY:    country,
+			TARIFFCODE: tariffcode,
+			EXPLAIN:    explain,
+			VOTE:       vote,
+		}
+
+		// Add to array
+		resData = append(resData, dataInfo)
+	}
+
+	encoder, err := json.Marshal(resData)
+	if err != nil {
+		log.Printf("Error encoding respond data: %q", err)
+		http.Error(rw, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	// Write JSON data to response body
+	rw.Header().Set("Content-Type", "application/json")
+	rw.Write(encoder)
 }
