@@ -10,12 +10,10 @@
 package main
 
 import (
-	b64 "encoding/base64"
 	"encoding/xml"
 	"github.com/blevesearch/bleve"
 	"io/ioutil"
 	"log"
-	"net/http"
 	"os"
 	"path/filepath"
 	"strconv"
@@ -145,7 +143,7 @@ func indexData(i bleve.Index) error {
 					DATE:     time.Now(),
 					CATEGORY: listItems.ListItemsType,
 					PRODDESC: item.ItemName,
-					PICTURE:  encodeImgUrlToBase64(item.ImageURL),
+					PICTURE:  item.ImageURL,
 				}
 
 				// Index
@@ -189,20 +187,4 @@ func indexData(i bleve.Index) error {
 	log.Printf("Indexed %d documents, in %.2fs (average %.2fms/doc)", count, indexDurationSeconds, timePerDoc/float64(time.Millisecond))
 
 	return nil
-}
-
-func encodeImgUrlToBase64(url string) string {
-	resp, err := http.Get(url)
-	if err != nil {
-		log.Println(err)
-		return url
-	}
-	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		log.Println(err)
-		return url
-	}
-	sEnc := b64.StdEncoding.EncodeToString([]byte(body))
-	return sEnc
 }

@@ -10,6 +10,7 @@
 package main
 
 import (
+	b64 "encoding/base64"
 	"encoding/json"
 	"github.com/blevesearch/bleve"
 	"io/ioutil"
@@ -98,7 +99,7 @@ func searchIndex(rw http.ResponseWriter, req *http.Request) {
 			DATE:       time.Now(),
 			CATEGORY:   category,
 			PRODDESC:   proddesc,
-			PICTURE:    picture,
+			PICTURE:    encodeImgUrlToBase64(picture),
 			HSCODE:     hscode,
 			COUNTRY:    country,
 			TARIFFCODE: tariffcode,
@@ -120,4 +121,25 @@ func searchIndex(rw http.ResponseWriter, req *http.Request) {
 	// Write JSON data to response body
 	rw.Header().Set("Content-Type", "application/json")
 	rw.Write(encoder)
+}
+
+func encodeImgUrlToBase64(url string) string {
+	if url == "" {
+		log.Println("[encodeImgUrlToBase64]: url empty")
+		return url
+	}
+
+	resp, err := http.Get(url)
+	if err != nil {
+		log.Println(err)
+		return url
+	}
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		log.Println(err)
+		return url
+	}
+	sEnc := b64.StdEncoding.EncodeToString([]byte(body))
+	return sEnc
 }
