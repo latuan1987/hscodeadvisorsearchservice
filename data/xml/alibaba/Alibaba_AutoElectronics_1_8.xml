@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-  <ListItems type="Bicycle">
+<root>
+  <ListItems type="Auto Electronics">
     <Item>
       <ImageURL>https://sc01.alicdn.com/kf/HTB1QLvpLXXXXXbbXpXXq6xXFXXXx/2015-OEM-New-5-5-Inch-A8.jpg_350x350.jpg</ImageURL>
       <ItemName>2015 OEM New 5.5 Inch A8 HUD with Multi Color Car HUD Display Universal Overspeed Warning OBD2 hud display speedometer</ItemName>
@@ -5757,3 +5757,4 @@
       </TechnicalDetail>
     </Item>
   </ListItems>
+</root>

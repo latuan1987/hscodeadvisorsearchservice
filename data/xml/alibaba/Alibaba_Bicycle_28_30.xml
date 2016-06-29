@@ -404,11 +404,11 @@
         <grossweight>16 KGS</grossweight>
         <color>to order</color>
         <certification>EN14764</certification>
-        <q'ty-20gp>165pcs</q'ty-20gp>
-        <q'ty-40hq>410pcs</q'ty-40hq>
+        <qty-20gp>165pcs</qty-20gp>
+        <qty-40hq>410pcs</qty-40hq>
         <framesize>to order</framesize>
-        <20gp>165 pcs</20gp>
-        <40hq>420 pcs</40hq>
+        <twenty-gp>165 pcs</twenty-gp>
+        <fourty-hq>420 pcs</fourty-hq>
         <deliverytime>40days After receipt of deposit</deliverytime>
         <moq>50 pcs</moq>
         <hubs>alloy hubs</hubs>

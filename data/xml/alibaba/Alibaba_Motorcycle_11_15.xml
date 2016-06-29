@@ -192,7 +192,7 @@
         <brake-f-r>DISC/DISC</brake-f-r>
         <brand>SENDA</brand>
         <color>YELLOW</color>
-        <4-stroke>200CC</4-stroke>
+        <four-stroke>200CC</four-stroke>
         <disc-discbrake>ALLOY HANDREST</disc-discbrake>
         <motorcycletype>NEW F4 RACING MOTORCYCLE</motorcycletype>
         <type>DUCATI STYLE</type>
@@ -779,8 +779,8 @@
         <brakessystem>Front &amp; Rear Disc Brake</brakessystem>
         <wheel-rim>13 inch Alloy Rims</wheel-rim>
         <tires>Front 130/60/13&amp; Rear 130/60/13; E-Mark</tires>
-        <20'fcl>18pcs</20'fcl>
-        <40'hq>38pcs</40'hq>
+        <t20fcl>18pcs</t20fcl>
+        <f40hq>38pcs</f40hq>
       </TechnicalDetail>
     </Item>
     <Item>
@@ -2961,7 +2961,7 @@
         <chargingtime>4-8h</chargingtime>
         <packingsize>180x77x82</packingsize>
         <weight>120kg</weight>
-        <40hqcontainer>57pcs</40hqcontainer>
+        <f40hqcontainer>57pcs</f40hqcontainer>
       </TechnicalDetail>
     </Item>
     <Item>
@@ -3670,8 +3670,8 @@
         <name>cheap chongqing T150-TITAN New moped cub 70cc 90cc 110cc motorcycle</name>
         <color>Red/Black/Blue/Silver</color>
         <size>1880*680*1060mm</size>
-        <40'hq>105</40'hq>
-        <20'gp>32</20'gp>
+        <f40hq>105</f40hq>
+        <t20gp>32</t20gp>
         <startingsystem>Electric/Kick start</startingsystem>
         <max.speed-km-h>60-80KM/h</max.speed-km-h>
       </TechnicalDetail>

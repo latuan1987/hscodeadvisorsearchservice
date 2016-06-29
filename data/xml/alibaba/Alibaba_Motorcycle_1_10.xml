@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <root>
-  <ListItems type="Bicycle">
+  <ListItems type="Auto Electronics">
     <Item>
       <ImageURL>https://sc01.alicdn.com/photo/v2/60199186693/500W_60V20AH_lead_acid_battery_Electric_Scooter.jpg_350x350.jpg</ImageURL>
       <ItemName>500W 60V20AH lead-acid battery Electric Scooter with pedal, made in GUOWEI,China</ItemName>
@@ -19,7 +19,7 @@
         <placeoforigin>Jiangsu, China (Mainland)</placeoforigin>
         <modelnumber>GWEM-XWY</modelnumber>
         <brake-f-r>drum brake</brake-f-r>
-        <500w60v20ahlead-acidbattery>35-40KMH speed</500w60v20ahlead-acidbattery>
+        <f500w60v20ahlead-acidbattery>35-40KMH speed</f500w60v20ahlead-acidbattery>
       </TechnicalDetail>
     </Item>
     <Item>
@@ -1769,7 +1769,7 @@
         <engine>4-stroke</engine>
         <color>Black, Red</color>
         <clutch>Manual, auto optional</clutch>
-        <40hqquantity>156 Units in CKD conditon</40hqquantity>
+        <f40hqquantity>156 Units in CKD conditon</f40hqquantity>
         <deliverytime>20-40 working days</deliverytime>
         <paymentterm>T/T, L/C</paymentterm>
         <oem>Accepted</oem>
@@ -3461,8 +3461,8 @@
         <modelnumber>CDB110-2</modelnumber>
         <brake-f-r>All Disk Brake</brake-f-r>
         <warranty>24 Month</warranty>
-        <vehicledimension-14"-12">1,530x740x1040mm</vehicledimension-14"-12">
-        <vehicledimension-17"-14">1,750x740x1120mm</vehicledimension-17"-14">
+        <vehicledimension-14-12>1,530x740x1040mm</vehicledimension-14-12>
+        <vehicledimension-17-14>1,750x740x1120mm</vehicledimension-17-14>
         <displacement>50cc, 70cc, 90cc, 110cc, 125cc, 150cc, 250cc</displacement>
         <enginebrand>Chongqing Hongfeng Or brand engine</enginebrand>
         <bodysticker>Monster sticker / Common sticker</bodysticker>
@@ -4207,7 +4207,7 @@
         <placeoforigin>China (Mainland)</placeoforigin>
         <modelnumber>ZP-NC250DB</modelnumber>
         <brake-f-r>DISC BRAKE</brake-f-r>
-        <4valve,alloywheel>20'CONTAINER CAN FIT 30 PCS</4valve,alloywheel>
+        <f4valvealloywheel>20'CONTAINER CAN FIT 30 PCS</f4valvealloywheel>
       </TechnicalDetail>
     </Item>
     <Item>
@@ -5464,7 +5464,7 @@
         <climbdegree>20-25 degree</climbdegree>
         <weight>120KG</weight>
         <packingsize>182x77x80cm</packingsize>
-        <40hqcontainer>57pcs</40hqcontainer>
+        <f40hqcontainer>57pcs</f40hqcontainer>
         <ratedload>150KG</ratedload>
       </TechnicalDetail>
     </Item>
@@ -6369,8 +6369,8 @@
         <name>TAMCO T125T-15 RALLY DRIVER-b gas scooter 125cc motorcycle prices</name>
         <color>Red/Black/Blue/Silver</color>
         <size>1880*680*1060mm</size>
-        <40'hq>105</40'hq>
-        <20'gp>32</20'gp>
+        <f40hq>105</f40hq>
+        <t20gp>32</t20gp>
         <startingsystem>Electric/Kick start</startingsystem>
         <max.speed-km-h>60-80KM/h</max.speed-km-h>
       </TechnicalDetail>
@@ -7270,7 +7270,7 @@
         <brandname>Hangpai</brandname>
         <placeoforigin>Zhejiang, China (Mainland)</placeoforigin>
         <modelnumber>HP-B07</modelnumber>
-        <scooter'scolor>green</scooter'scolor>
+        <scooterscolor>green</scooterscolor>
       </TechnicalDetail>
     </Item>
     <Item>

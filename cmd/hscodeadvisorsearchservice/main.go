@@ -65,18 +65,28 @@ type Item struct {
 	FOBPrice string `xml:"FOBPrice"`
 }
 
-func xmlParse(filePath string) ImportData {
+func xmlParse(filePath string) (ImportData, error) {
+	var d ImportData
+	
 	xmlFile, err := os.Open(filePath)
 	if err != nil {
-		log.Fatalf("Error xmlParse: %q", err)
+		log.Printf("Error xmlParse: %q", err)
+		return d, err
 	}
 	defer xmlFile.Close()
 
-	b, _ := ioutil.ReadAll(xmlFile)
-	var d ImportData
-	xml.Unmarshal(b, &d)
+	b, err := ioutil.ReadAll(xmlFile)
+	if err != nil {
+		log.Printf("Error reading data from xml file: %q", err)
+		return d, err
+	}
+	err = xml.Unmarshal(b, &d)
+	if err != nil {
+		log.Printf("Error decoding xml data to json: %q", err)
+		return d, err
+	}
 
-	return d
+	return d, nil
 }
 
 func findAllFiles(searchDir string) []string {
@@ -88,7 +98,7 @@ func findAllFiles(searchDir string) []string {
 		return nil
 	})
 	if err != nil {
-		log.Fatalf("Error findAllFiles: %q", err)
+		log.Printf("Error findAllFiles: %q", err)
 	}
 
 	return fileList
@@ -107,7 +117,13 @@ func indexData(i bleve.Index) error {
 	listFiles := findAllFiles(*xmlDir)
 	for _, file := range listFiles {
 		// Parsing xml
-		importDataList = append(importDataList, xmlParse(file))
+		importData, err := xmlParse(file)
+		if err != nil {
+			continue
+		}
+		
+		// Add to slide
+		importDataList = append(importDataList, importData)
 
 		// Rename file
 		extension := filepath.Ext(file)
@@ -137,7 +153,7 @@ func indexData(i bleve.Index) error {
 
 				// Index
 				if err = batch.Index(strconv.FormatUint(globDocId, 10), dataInfo); err != nil {
-					log.Fatal(err)
+					log.Println(err)
 					return err
 				}
 				batchCount++
@@ -173,7 +189,7 @@ func indexData(i bleve.Index) error {
 
 				// Index
 				if err = batch.Index(strconv.FormatUint(globDocId, 10), dataInfo); err != nil {
-					log.Fatal(err)
+					log.Println(err)
 					return err
 				}
 				batchCount++
@@ -181,6 +197,7 @@ func indexData(i bleve.Index) error {
 				if batchCount >= *batchSize {
 					err = i.Batch(batch)
 					if err != nil {
+						log.Println(err)
 						return err
 					}
 					batch = i.NewBatch()
@@ -202,7 +219,7 @@ func indexData(i bleve.Index) error {
 	if batchCount > 0 {
 		err = i.Batch(batch)
 		if err != nil {
-			log.Fatal(err)
+			log.Println(err)
 		}
 	}
 	indexDuration := time.Since(startTime)
@@ -217,14 +234,17 @@ func searchIndex(rw http.ResponseWriter, req *http.Request) {
 	// Get passed parameter
 	body, err := ioutil.ReadAll(req.Body)
 	if err != nil {
-		log.Fatalf("Error readall: %q", err)
+		log.Printf("Error reading request data: %q", err)
+		http.NotFound(rw, req)
 		return
 	}
 
+	// Decode bytes to json data
 	var recvQuery = jsonRecvQuery{}
 	err = json.Unmarshal(body, &recvQuery)
 	if err != nil {
-		log.Fatalf("Error decoding: %q", err)
+		log.Printf("Error decoding request data: %q", err)
+		http.Error(rw, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
@@ -234,12 +254,13 @@ func searchIndex(rw http.ResponseWriter, req *http.Request) {
 	searchRequest := bleve.NewSearchRequestOptions(query, 100, 0, false)
 	searchResult, err := dataIndex.Search(searchRequest)
 	if err != nil {
-		log.Fatalf("Error readall: %q", err)
+		log.Printf("Error full text search: %q", err)
+		http.Error(rw, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
 	if searchResult.Total < 0 {
-		log.Fatalf("Error readall: %q", err)
+		log.Printf("Total result < 0")
 		return
 	}
 
@@ -302,7 +323,8 @@ func searchIndex(rw http.ResponseWriter, req *http.Request) {
 
 	encoder, err := json.Marshal(resData)
 	if err != nil {
-		log.Fatalf("Error marshal: %q", err)
+		log.Printf("Error encoding respond data: %q", err)
+		http.Error(rw, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
@@ -315,7 +337,7 @@ func main() {
 	port := os.Getenv("PORT")
 
 	if port == "" {
-		log.Fatal("$PORT must be set")
+		log.Printf("$PORT must be set")
 		return
 	}
 

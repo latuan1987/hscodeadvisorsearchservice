@@ -71,7 +71,7 @@
         <heightadapt>130-170cm</heightadapt>
         <gear>21/24/27 speed</gear>
         <loadcapacity>200kg</loadcapacity>
-        <40hq>300-500pcs</40hq>
+        <fourty-hq>300-500pcs</fourty-hq>
         <package>85% SKD, Carton box with foam</package>
       </TechnicalDetail>
     </Item>
@@ -2237,7 +2237,7 @@
         <placeoforigin>Zhejiang, China (Mainland)</placeoforigin>
         <grossweight>4.5kgs</grossweight>
         <certificates>CE(EN71standard)</certificates>
-        <frame,fork>TIG welded Steel</frame,fork>
+        <framefork>TIG welded Steel</framefork>
         <usage>Kids' Learning Bike</usage>
         <color>Royal Blue</color>
         <pedals>Without</pedals>
@@ -4165,9 +4165,9 @@
         <motorpower>Motor power:</motorpower>
         <battery>:Lead-acid 12V 8AH</battery>
         <chargetime>3h</chargetime>
-        <.maxspeed>5km/h</.maxspeed>
+        <maxspeed>5km/h</maxspeed>
         <range>8-14km</range>
-        <.controller>double controller</.controller>
+        <controller>double controller</controller>
         <doublecontroller>65kg</doublecontroller>
       </TechnicalDetail>
     </Item>
@@ -5377,7 +5377,7 @@
         <brake>single rear brake</brake>
         <sticker>As you need</sticker>
         <mudgard>No</mudgard>
-        <1-40hq>2400 PCS</1-40hq>
+        <One-40hq>2400 PCS</One-40hq>
         <oem>Yes</oem>
         <glossweight>6kgs</glossweight>
       </TechnicalDetail>
@@ -7294,7 +7294,7 @@
         <placeoforigin>Taiwan</placeoforigin>
         <grossweight>7~9kg</grossweight>
         <color>any color</color>
-        <6speeds>Shimano TX800</6speeds>
+        <six-speeds>Shimano TX800</six-speeds>
         <model>Mix-Customization</model>
       </TechnicalDetail>
     </Item>

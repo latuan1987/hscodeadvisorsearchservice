@@ -1893,7 +1893,7 @@
         <brandname>kayak</brandname>
         <placeoforigin>China (Mainland)</placeoforigin>
         <modelnumber>150cc</modelnumber>
-        <2014newestmodle>DIRT BIKE</2014newestmodle>
+        <newestmodle2014>DIRT BIKE</newestmodle2014>
       </TechnicalDetail>
     </Item>
     <Item>
@@ -3257,7 +3257,7 @@
         <climbcapacity>25-30 degrees</climbcapacity>
         <color>white ,black, red ,grey</color>
         <loadcapacity>120kgs</loadcapacity>
-        <20hqcontainer>60pcs</20hqcontainer>
+        <t20hqcontainer>60pcs</t20hqcontainer>
       </TechnicalDetail>
     </Item>
     <Item>
@@ -3962,8 +3962,8 @@
         <name>hot sale New GN150-30 125cc import china motor bikes</name>
         <color>Red/Black/Blue/Silver</color>
         <size>1880*680*1060mm</size>
-        <40'hq>105</40'hq>
-        <20'gp>32</20'gp>
+        <f40hq>105</f40hq>
+        <t20gp>32</t20gp>
         <startingsystem>Electric/Kick start</startingsystem>
         <max.speed-km-h>60-80KM/h</max.speed-km-h>
       </TechnicalDetail>
@@ -7765,7 +7765,7 @@
         <placeoforigin>Chongqing, China (Mainland)</placeoforigin>
         <modelnumber>SD125GY-2F</modelnumber>
         <brake-f-r>DISK/DISK BRAKE</brake-f-r>
-        <4stroke>E/K START</4stroke>
+        <fourstroke>E/K START</fourstroke>
         <type>dirt bike</type>
         <highquality>HIGH SPEED</highquality>
         <keywords>Powerful 125CC Water Cooled Dirt Bike</keywords>
@@ -8039,7 +8039,7 @@
         <frame>Aluminum body</frame>
         <optionalbattery>20Ah/28Ah lithium battery</optionalbattery>
         <optionalcharger>3A/5A</optionalcharger>
-        <lighting,signalingsystem>LED</lighting,signalingsystem>
+        <lightingsignalingsystem>LED</lightingsignalingsystem>
         <climbingability>45%Slope</climbingability>
         <rearsuspensiontype>fork, central damping</rearsuspensiontype>
         <instrumenttype>Full-function LCD instrument</instrumenttype>
@@ -9448,7 +9448,7 @@
         <modelnumber>NM150-9A</modelnumber>
         <brake-f-r>Disc/disc</brake-f-r>
         <eecconditions>EEC conditions</eecconditions>
-        <150ccamazingspeed>150cc amazing speed</150ccamazingspeed>
+        <amazingspeed150cc>150cc amazing speed</amazingspeed150cc>
         <highquality>high quality</highquality>
       </TechnicalDetail>
     </Item>
@@ -10224,8 +10224,8 @@
         <modelnumber>KB250-E KB350-E</modelnumber>
         <brake-f-r>front twin disc brake and rear disc brake</brake-f-r>
         <engine>water cooled, twin cylinder</engine>
-        <250cc>twin cylinder water cooled carburetor</250cc>
-        <350cc>twin cylinder water coole EFI</350cc>
+        <engine250cc>twin cylinder water cooled carburetor</engine250cc>
+        <engine350cc>twin cylinder water coole EFI</engine350cc>
       </TechnicalDetail>
     </Item>
     <Item>
@@ -10628,7 +10628,7 @@
         <placeoforigin>Guangdong, China (Mainland)</placeoforigin>
         <modelnumber>FK125-B6</modelnumber>
         <brake-f-r>Disk/Drum</brake-f-r>
-        <125cc-150cc>Optional</125cc-150cc>
+        <optionnal-125cc-150cc>Optional</optionnal-125cc-150cc>
         <rim>aluminum</rim>
         <startmethod>kick &amp; Electric</startmethod>
         <netweight>118kg</netweight>
@@ -10813,7 +10813,7 @@
         <brandname>kayak</brandname>
         <placeoforigin>China (Mainland)</placeoforigin>
         <modelnumber>KM150-HL</modelnumber>
-        <2015newestmodle>DIRT BIKE</2015newestmodle>
+        <newestmodle2015>DIRT BIKE</newestmodle2015>
       </TechnicalDetail>
     </Item>
     <Item>
@@ -12906,7 +12906,7 @@
         <equipment>DISK/DRUM &amp; DISK/DISK IS OPTIONAL</equipment>
         <market>Morocco</market>
         <ledlights>optional</ledlights>
-        <40hq>144PCS</40hq>
+        <fourty-hq>144PCS</fourty-hq>
         <engine>LIFAN 110 OR 120CC</engine>
         <gw>98.5KG</gw>
         <guarantee>2 years</guarantee>
@@ -12924,7 +12924,7 @@
         <brandname>kayak</brandname>
         <placeoforigin>China (Mainland)</placeoforigin>
         <modelnumber>KM250GY-12</modelnumber>
-        <2014newestmodle>DIRT BIKE</2014newestmodle>
+        <newestmodle2014>DIRT BIKE</newestmodle2014>
       </TechnicalDetail>
     </Item>
     <Item>
@@ -12977,7 +12977,7 @@
         <brakes>FR/RR DISK/DISK</brakes>
         <max.loading-kg>150</max.loading-kg>
         <fuelcapacity-l>12</fuelcapacity-l>
-        <max.speed-km-h≥90>≥90</max.speed-km-h≥90>
+        <max.speed-km-h-lagerthan-90>lager than 90</max.speed-km-h-lagerthan-90>
         <netweight-kg>137</netweight-kg>
         <max.power-kw-rpm>12/7000</max.power-kw-rpm>
         <shockabsorber>upside down shock absorber</shockabsorber>
@@ -16237,7 +16237,7 @@
         <motorpower>9000W</motorpower>
         <batteryvoltage-v>72V80AH</batteryvoltage-v>
         <chargingcurrent-a>15A</chargingcurrent-a>
-        <controller'scurrentlimited-a>220A</controller'scurrentlimited-a>
+        <controller-scurrentlimited-a>220A</controller-scurrentlimited-a>
         <motorphasecurrent>550A</motorphasecurrent>
       </TechnicalDetail>
     </Item>
@@ -16594,7 +16594,7 @@
         <brake-f-r>disc brake</brake-f-r>
         <batteryvoltage-v>60V</batteryvoltage-v>
         <chargingcurrent-a>5A</chargingcurrent-a>
-        <controller'scurrentlimited-a>45A</controller'scurrentlimited-a>
+        <controller-scurrentlimited-a>45A</controller-scurrentlimited-a>
         <batterycapacity>40AH</batterycapacity>
       </TechnicalDetail>
     </Item>
@@ -19000,7 +19000,7 @@
         <maxpower-kw-rpm>2.5/7500</maxpower-kw-rpm>
         <maxspeed>50km/h</maxspeed>
         <netweight>80KGS</netweight>
-        <40'hqcontain>105units</40'hqcontain>
+        <fourty-hqcontain>105units</fourty-hqcontain>
       </TechnicalDetail>
     </Item>
     <Item>

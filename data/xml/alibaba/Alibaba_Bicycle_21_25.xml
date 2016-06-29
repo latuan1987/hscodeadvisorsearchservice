@@ -2148,7 +2148,7 @@
         <grossweight>50Kgs</grossweight>
         <productname>JX-7038W</productname>
         <bigflywheel>18KGS</bigflywheel>
-        <maxuser'sbodyweight>125Kgs</maxuser'sbodyweight>
+        <maxusersbodyweight>125Kgs</maxusersbodyweight>
         <assemblysize>115X 52X116CM</assemblysize>
         <outctnsize-lxwxhcm>117X88X25(CM)</outctnsize-lxwxhcm>
         <g.w-n.w>50Kgs/44Kgs</g.w-n.w>
@@ -3204,7 +3204,7 @@
         <placeoforigin>Zhejiang, China (Mainland)</placeoforigin>
         <grossweight>61kg</grossweight>
         <brake>Front:V-brake Rear:V-brake</brake>
-        <'gear>6 speeds</'gear>
+        <gear>6 speeds</gear>
         <wholebody>2400*870*1290mm</wholebody>
         <boxsize>990*620*460mm</boxsize>
         <tire>KENDA TIRE</tire>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <root>
-  <ListItems type="Bicycle">
+  <ListItems type="Buses">
     <Item>
       <ImageURL>https://sc01.alicdn.com/kf/HTB1vBciIXXXXXbGXpXXq6xXFXXXT/JK6117HA-howo-red-euro-3-47-seats.jpg_350x350.jpg</ImageURL>
       <ItemName>JK6117HA howo red euro 3 47 seats bus</ItemName>
@@ -765,7 +765,7 @@
         <brandname>BAW</brandname>
         <modelnumber>BJ6550MBE</modelnumber>
         <wheelbase>3110</wheelbase>
-        <tread,front-rear>1655/1650</tread,front-rear>
+        <treadfront-rear>1655/1650</treadfront-rear>
         <min.groundclearance>140</min.groundclearance>
         <curbvehicleweight>1990</curbvehicleweight>
         <grossvehicleweight>2150</grossvehicleweight>
@@ -1626,7 +1626,7 @@
         <enginemodel>FAW brand engine 4DX23-120E3F</enginemodel>
         <driveclutch>Hydraulic, Single plate, dry type diaphragm spring</driveclutch>
         <drivegearbox>5 speed manual</drivegearbox>
-        <max.gradeability-%>30</max.gradeability-%>
+        <max.gradeability-percent>30</max.gradeability-percent>
       </TechnicalDetail>
     </Item>
     <Item>
@@ -2787,7 +2787,7 @@
         <placeoforigin>Henan, China (Mainland)</placeoforigin>
         <brandname>YUTONG</brandname>
         <modelnumber>ZK6858H9</modelnumber>
-        <10m51seaterusedpassengerbus>used coach</10m51seaterusedpassengerbus>
+        <t10m51seaterusedpassengerbus>used coach</t10m51seaterusedpassengerbus>
         <busforsale>bus</busforsale>
         <max.speed>105km/h</max.speed>
         <brand>yutong</brand>
@@ -3876,7 +3876,7 @@
         <enginemodel>FAW brand engine 4DX23-120E3F</enginemodel>
         <driveclutch>Hydraulic, Single plate, dry type diaphragm spring</driveclutch>
         <drivegearbox>5 speed manual</drivegearbox>
-        <max.gradeability-%>30</max.gradeability-%>
+        <max.gradeability-percent>30</max.gradeability-percent>
       </TechnicalDetail>
     </Item>
     <Item>
@@ -4108,7 +4108,7 @@
         <brandname>BAW</brandname>
         <modelnumber>BJ6550MBE</modelnumber>
         <wheelbase>3110</wheelbase>
-        <tread,front-rear>1655/1650</tread,front-rear>
+        <treadfront-rear>1655/1650</treadfront-rear>
         <min.groundclearance>140</min.groundclearance>
         <curbvehicleweight>1990</curbvehicleweight>
         <grossvehicleweight>2150</grossvehicleweight>
@@ -4906,7 +4906,7 @@
         <modelnumber>Dongfeng 10m bus</modelnumber>
         <displecement>8.3L</displecement>
         <wheelbase-mm>4700</wheelbase-mm>
-        <approach-departure-°>9/8</approach-departure-°>
+        <approach-departure->9/8</approach-departure->
         <ratedpassanger>24-45</ratedpassanger>
         <max.speed-km-h>110</max.speed-km-h>
         <max.power-kw-rmp>180</max.power-kw-rmp>
@@ -6197,7 +6197,7 @@
         <enginemodel>FAW brand engine 4DX23-120E3F</enginemodel>
         <driveclutch>Hydraulic, Single plate, dry type diaphragm spring</driveclutch>
         <drivegearbox>5 speed manual</drivegearbox>
-        <max.gradeability-%>30</max.gradeability-%>
+        <max.gradeability-percent>30</max.gradeability-percent>
       </TechnicalDetail>
     </Item>
     <Item>
@@ -6818,7 +6818,7 @@
         <ratedload>15.45 ton</ratedload>
         <wheelbase>4700mm</wheelbase>
         <displacement>8.3 L</displacement>
-        <approach-departure-°>9/8</approach-departure-°>
+        <approach-departure-degrees>9/8</approach-departure-degrees>
         <ratedpassanger>24-45</ratedpassanger>
         <max.speed-km-h>110</max.speed-km-h>
       </TechnicalDetail>
@@ -7862,7 +7862,7 @@
         <brandname>DAEWOO</brandname>
         <modelnumber>GDW6117HKC1-1</modelnumber>
         <color>Customized</color>
-        <-km-hmaxspeed>120</-km-hmaxspeed>
+        <km-hmaxspeed>120</km-hmaxspeed>
       </TechnicalDetail>
     </Item>
     <Item>
@@ -15359,7 +15359,7 @@
         <enginemodel>FAW brand engine 4DX23-120E3F</enginemodel>
         <driveclutch>Hydraulic, Single plate, dry type diaphragm spring</driveclutch>
         <drivegearbox>5 speed manual</drivegearbox>
-        <max.gradeability-%>30</max.gradeability-%>
+        <max.gradeability-percent>30</max.gradeability-percent>
       </TechnicalDetail>
     </Item>
     <Item>
@@ -22598,7 +22598,7 @@
         <productname>Higher quality 4 x2 Dongfeng electric EQ5160XXYTBEV transport truck</productname>
         <model>EQ5160XXYTBEV</model>
         <curbweight-t>8.2</curbweight-t>
-        <overalldimensions-m9-l,w,h>8950,9000,9350*2470,2500,2500*3540,3850,3960</overalldimensions-m9-l,w,h>
+        <overalldimensions-m9-lwh>8950,9000,9350*2470,2500,2500*3540,3850,3960</overalldimensions-m9-lwh>
         <wheelbase>5000/5200mm</wheelbase>
         <tyresize>11.00R22.5 16PR/10.00R20 16PR</tyresize>
         <ratedvoltage>380VAC</ratedvoltage>
@@ -23963,7 +23963,7 @@
         <productname>Higher quality 4 x2 Dongfeng electric EQ5160XXYTBEV transport truck</productname>
         <model>EQ5160XXYTBEV</model>
         <curbweight-t>8.2</curbweight-t>
-        <overalldimensions-m9-l,w,h>8950,9000,9350*2470,2500,2500*3540,3850,3960</overalldimensions-m9-l,w,h>
+        <overalldimensions-m9-lwh>8950,9000,9350*2470,2500,2500*3540,3850,3960</overalldimensions-m9-lwh>
         <wheelbase>5000/5200mm</wheelbase>
         <tyresize>11.00R22.5 16PR/10.00R20 16PR</tyresize>
         <ratedvoltage>380VAC</ratedvoltage>
@@ -25506,7 +25506,7 @@
         <topspeed-km-h>69</topspeed-km-h>
         <grossweight-kg>16500</grossweight-kg>
         <front-reartread-mm>2020/1860</front-reartread-mm>
-        <approach-departureangle-°>7/7</approach-departureangle-°>
+        <approach-departureangle-degrees>7/7</approach-departureangle-degrees>
         <front-rearoverhang-mm>2250/3240</front-rearoverhang-mm>
         <wheelbase-mm>5000</wheelbase-mm>
       </TechnicalDetail>

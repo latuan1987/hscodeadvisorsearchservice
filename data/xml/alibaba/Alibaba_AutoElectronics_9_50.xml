@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<root>
-  <ListItems type="Bicycle">
+  <root>
+  <ListItems type="Auto Electronics">
     <Item>
       <ImageURL>https://sc02.alicdn.com/kf/HTB13ojMJFXXXXb1XpXXq6xXFXXXC/First-aid-remote-gps-tracker-position-locator.jpg_350x350.jpg</ImageURL>
       <ItemName>First aid remote gps tracker position locator kids smart watch gps intelligent children watch</ItemName>
@@ -390,7 +390,7 @@
         <videoformat>HD 1080P</videoformat>
         <cpu>Rockchip RK3188 Cortex A9 Quad Core 1.6GHz*4</cpu>
         <flashmemory>16G Nand(Flash) and DDR3 1GB RAM</flashmemory>
-        <3gwifi>Built-in WiFi</3gwifi>
+        <a3gwifi>Built-in WiFi</a3gwifi>
         <osdlanguages>Russian,Portuguese,English,Spanish,German,Turkish,Arabic,Italian...</osdlanguages>
         <mirror-link>Support</mirror-link>
         <nfc>Support</nfc>
@@ -976,8 +976,8 @@
         <warranty>2 Years</warranty>
         <thd>&lt;0.15%</thd>
         <inputsensitivity>200mV-8V</inputsensitivity>
-        <rmspower@4ohms>200w*2 / 640w*1 ( bridged)</rmspower@4ohms>
-        <rmspower@2ohms>320w*2</rmspower@2ohms>
+        <rmspower4ohms>200w*2 / 640w*1 ( bridged)</rmspower4ohms>
+        <rmspower2ohms>320w*2</rmspower2ohms>
         <frequencyresponse>10hz-30khz</frequencyresponse>
         <fusetype>30A*2</fusetype>
         <type>AB Car Amplifier</type>
@@ -1485,7 +1485,7 @@
         <warranty>12 Months</warranty>
         <color>Black</color>
         <display>3.5" TFT moitor</display>
-        <2.4ghzwirelesscamera>optional</2.4ghzwirelesscamera>
+        <a2.4ghzwirelesscamera>optional</a2.4ghzwirelesscamera>
         <tftmonitorresolution>320x240</tftmonitorresolution>
         <fmtransmitterrange>8 meters</fmtransmitterrange>
         <built-in>FM frequency transmitter</built-in>
@@ -1738,7 +1738,7 @@
         <brandname>WanMa</brandname>
         <modelnumber>GRD-E3</modelnumber>
         <warranty>1 Years</warranty>
-        <1080p>super radar detector</1080p>
+        <a1080p>super radar detector</a1080p>
       </TechnicalDetail>
     </Item>
     <Item>
@@ -2152,7 +2152,7 @@
         <brandname>SINOCASTEL</brandname>
         <modelnumber>IDD-213GL</modelnumber>
         <warranty>12 Months</warranty>
-        <obdii,fms,j1939,j1708protocol>Cars,Trucks, Buses support-level monitoring gps tracker</obdii,fms,j1939,j1708protocol>
+        <obdiifmsj1939j1708protocol>Cars,Trucks, Buses support-level monitoring gps tracker</obdiifmsj1939j1708protocol>
         <obdiiplugandplay>No installation cost - level monitoring gps tracker</obdiiplugandplay>
         <livecarmonitoring>Google map tracking software - Car location tracking software</livecarmonitoring>
         <read-erasediagnostictroublecodes>Yes - Car location tracking software</read-erasediagnostictroublecodes>
@@ -2385,7 +2385,7 @@
         <warranty>3 Years</warranty>
         <size>48*60*22mm</size>
         <weight>360g</weight>
-        <3ggsm>850/1900MHZ 900/2100MHZ 850(800)2100MHZ</3ggsm>
+        <a3ggsm>850/1900MHZ 900/2100MHZ 850(800)2100MHZ</a3ggsm>
         <gpschip>GPS SIRF-Star IV chipset</gpschip>
         <over-speedalarm>YES</over-speedalarm>
         <geo-fencealarm>YES</geo-fencealarm>
@@ -2612,7 +2612,7 @@
         <resolution>1920*1080P 30FPS 1280*720P 30FPS</resolution>
         <externalmemory>TF card(Upto 32GB)</externalmemory>
         <language>Multiple languages</language>
-        <6-groupglasslens>Yes</6-groupglasslens>
+        <groupglasslens>Yes</groupglasslens>
         <powerinput>12V</powerinput>
         <videoformat>MOV</videoformat>
         <g-sensor>Yes</g-sensor>
@@ -2723,7 +2723,7 @@
         <operationsystem>Android</operationsystem>
         <cpu>Quad core</cpu>
         <screen>Capacitive Touch Screen Car Dvd Player</screen>
-        <3g-wifi>SUPPORT</3g-wifi>
+        <a3g-wifi>SUPPORT</a3g-wifi>
         <glonass-gps>SUPPORT</glonass-gps>
         <resolution>800X480 1024x600</resolution>
         <color>Black</color>
@@ -2956,7 +2956,7 @@
         <capacitivescreenresolution>1024*600</capacitivescreenresolution>
         <am-fm-rds>YES</am-fm-rds>
         <phonebooksupport>YES</phonebooksupport>
-        <3dstereophonicsoundsystem>YES</3dstereophonicsoundsystem>
+        <a3dstereophonicsoundsystem>YES</a3dstereophonicsoundsystem>
         <supporthd1080pvideo>YES</supporthd1080pvideo>
       </TechnicalDetail>
     </Item>
@@ -4139,7 +4139,7 @@
         <name>car mp3 player</name>
         <brandname>Hitop</brandname>
         <detachablepanel>Yes</detachablepanel>
-        <1din>Yes</1din>
+        <a1din>Yes</a1din>
         <lightingcolor>3 colors(Red/Green/Blue)</lightingcolor>
         <eqpreset>Jazz/rock/classic/pop</eqpreset>
         <format>MP3/WMA</format>
@@ -4323,7 +4323,7 @@
         <operationsystem>Android</operationsystem>
         <cpu>Quad core</cpu>
         <type>for Hyundai</type>
-        <3g-wifi>SUPPORT</3g-wifi>
+        <a3g-wifi>SUPPORT</a3g-wifi>
         <glonass-gps>SUPPORT</glonass-gps>
         <resolution>800X480 1024x600</resolution>
         <color>Black</color>
@@ -4564,7 +4564,7 @@
         <androidos>4.44, Quad core, 1.6GHZ 1G RAM, 16GB ROM</androidos>
         <hdresolution>1024x600</hdresolution>
         <carmake>VW UNIVERSAL</carmake>
-        <3gwifi>YES</3gwifi>
+        <a3gwifi>YES</a3gwifi>
         <mirrorlink>YES, dual way touch control</mirrorlink>
         <obdii>YES, scan tool optional</obdii>
         <app>YES, free app via google play</app>
@@ -6585,7 +6585,7 @@
         <tv>ATV/DVB-t/ISDB-T(optional)</tv>
         <steeringwheelcontrol>yes</steeringwheelcontrol>
         <gpsdualzone>yes</gpsdualzone>
-        <3ggprs-wifi-rearcamera>optional</3ggprs-wifi-rearcamera>
+        <a3ggprs-wifi-rearcamera>optional</a3ggprs-wifi-rearcamera>
       </TechnicalDetail>
     </Item>
     <Item>
@@ -6645,7 +6645,7 @@
         <modelnumber>UCC-161</modelnumber>
         <warranty>6 Months</warranty>
         <usbcharger>Multi-function phone charger smart charger battery tester USB charger</usbcharger>
-        <2usb>Battery tester</2usb>
+        <a2usb>Battery tester</a2usb>
         <warningalarm>angle adjustable</warningalarm>
       </TechnicalDetail>
     </Item>
@@ -6664,7 +6664,7 @@
         <videooutput>VGA/CVBS</videooutput>
         <g-sensor>Built-in G-sensor</g-sensor>
         <storage>Dual SD cards (128GB each)</storage>
-        <3g-4g>4G</3g-4g>
+        <a3g-4g>4G</a3g-4g>
         <gps>Built-in GPS</gps>
         <wifi>Optional</wifi>
         <cableconnector>4 pin aviation connector</cableconnector>
@@ -7439,8 +7439,8 @@
         <warranty>1 Years</warranty>
         <description>USB3.0 3-Port 42W with 1-Port QC2.0 Car Charger</description>
         <technology>Qualcomm Quick Charge 2.0</technology>
-        <1-portwithqc2.0protocol>5V/2.4A, 9V/2A, 12V/2A</1-portwithqc2.0protocol>
-        <2-ports>2.4A Max for Each Port</2-ports>
+        <a1-portwithqc2.0protocol>5V/2.4A, 9V/2A, 12V/2A</a1-portwithqc2.0protocol>
+        <a2-ports>2.4A Max for Each Port</a2-ports>
         <input>DC12-24V</input>
         <power>42W</power>
         <ledindicator>Yes</ledindicator>
@@ -8369,8 +8369,8 @@
         <modelnumber>FTH-DVR-E4/5</modelnumber>
         <warranty>1 Years</warranty>
         <workingindicators>Yes</workingindicators>
-        <3g>Yes</3g>
-        <4g>Yes</4g>
+        <a3g>Yes</a3g>
+        <a4g>Yes</a4g>
         <wifi>Yes</wifi>
         <gps>Yes</gps>
         <cms-playbacksoftware>Yes</cms-playbacksoftware>
@@ -9714,8 +9714,8 @@
         <model>C109</model>
         <bluetooth>upport hands free call and A2DP</bluetooth>
         <osdlanguage>English/French/German/Italian/Spanish/Polish</osdlanguage>
-        <2zone>You can listen to music while viewing GPS map</2zone>
-        <3gwififunction>Support</3gwififunction>
+        <a2zone>You can listen to music while viewing GPS map</a2zone>
+        <a3gwififunction>Support</a3gwififunction>
         <rearcamerainput>Yes</rearcamerainput>
         <buttonbacklightcolor>blue/red</buttonbacklightcolor>
         <features>ith 3G | WIFI | Sat Nav WinCE 6.0 | Bluetooth | Phonebook</features>
@@ -9736,7 +9736,7 @@
         <screen>2.7inch TFT HD screen 16:9</screen>
         <nightversion>4 IR lamps</nightversion>
         <motiondetect>Support</motiondetect>
-        <24hparkingsurveillance>Support</24hparkingsurveillance>
+        <a24hparkingsurveillance>Support</a24hparkingsurveillance>
         <screensaver>Support</screensaver>
         <photoresolution>12M/8M/5M/4M/3M</photoresolution>
         <looprecording>Support</looprecording>
@@ -10425,7 +10425,7 @@
         <outputratedcurrent-a>0~200</outputratedcurrent-a>
         <efficiency>≥95%</efficiency>
         <noise-db>≤60</noise-db>
-        <workingtemperature-℃>-20~50℃</workingtemperature-℃>
+        <workingtemperatureC>-20~50℃</workingtemperatureC>
         <workinghumidity>5~95%</workinghumidity>
       </TechnicalDetail>
     </Item>
@@ -10591,7 +10591,7 @@
         <auto-running>yes, no extra CD</auto-running>
         <gpschip>u-Blox</gpschip>
         <batterylife>4 weeks in power saving mode; 10 hours in golf playing mode</batterylife>
-        <ce,rohscertificate>yes</ce,rohscertificate>
+        <cerohscertificate>yes</cerohscertificate>
         <system>MAC and Window compatible</system>
         <g-sensorpedometer>yes</g-sensorpedometer>
         <altitude>yes</altitude>
@@ -10807,7 +10807,7 @@
         <screen>Full touch</screen>
         <obd>Support</obd>
         <system>Android 4.4</system>
-        <3g-wifi>Support</3g-wifi>
+        <a3gwifi>Support</a3gwifi>
         <tpms>Support</tpms>
         <backlight>Blue/Green/Red</backlight>
         <resolution>1024*600</resolution>
@@ -11592,8 +11592,8 @@
         <cartonsize>710*420*430mm</cartonsize>
         <productoutsidesize>685*400*400mm</productoutsidesize>
         <productinnersize>535*270*300mm</productinnersize>
-        <20gp>215PCS</20gp>
-        <40hq>500PCS</40hq>
+        <a20gp>215PCS</a20gp>
+        <a40hq>500PCS</a40hq>
         <coolingeffect>cool down 25degree</coolingeffect>
       </TechnicalDetail>
     </Item>
@@ -11635,7 +11635,7 @@
         <brand>Hitop/OEM</brand>
         <carmade>Universal</carmade>
         <lightingcolor>3 colors(Red/Green/Blue)</lightingcolor>
-        <1din>Yes</1din>
+        <a1din>Yes</a1din>
         <fixedpanel>Yes</fixedpanel>
         <certificate>CE,ROHS,EMARK</certificate>
         <output>4*25W(7388IC)/2*25W(7377IC)</output>
@@ -13042,7 +13042,7 @@
         <preset>18FM/12AM</preset>
         <faceplate>all-weather</faceplate>
         <powercablelength>2 m (power booster)</powercablelength>
-        <18fm-12am>protect from heating,cooling,humidity</18fm-12am>
+        <a18fm-12am>protect from heating,cooling,humidity</a18fm-12am>
         <radiofunction>Radio function</radiofunction>
         <speciality>remote ready</speciality>
         <bluetooth>bluetooth enable</bluetooth>
@@ -15058,8 +15058,8 @@
         <cartonsize>600*350*400mm</cartonsize>
         <productoutsidesize>290*320*370mm</productoutsidesize>
         <productinnersize>210*200*280mm</productinnersize>
-        <20gp>600PCS</20gp>
-        <40hq>1500PCS</40hq>
+        <a20gp>600PCS</a20gp>
+        <a40hq>1500PCS</a40hq>
         <coolingeffect>cool down 18degree</coolingeffect>
       </TechnicalDetail>
     </Item>
@@ -15757,7 +15757,7 @@
       <FOBPrice>US $26 - 35 / Set</FOBPrice>
       <TechnicalDetail>
         <type>Vehicle GPS tracker</type>
-        <90.0-lx48.0-wx16-hmm>80g</90.0-lx48.0-wx16-hmm>
+        <a90.0-lx48.0-wx16-hmm>80g</a90.0-lx48.0-wx16-hmm>
       </TechnicalDetail>
     </Item>
     <Item>
@@ -16039,7 +16039,7 @@
         <visualangleofview>170°</visualangleofview>
         <camerapixel>1080P</camerapixel>
         <color>dark grey</color>
-        <360viewcarcamerasystem>support</360viewcarcamerasystem>
+        <a360viewcarcamerasystem>support</a360viewcarcamerasystem>
       </TechnicalDetail>
     </Item>
     <Item>
@@ -16560,7 +16560,7 @@
         <voltage>5V</voltage>
         <workingvoltage>12V</workingvoltage>
         <musicsource>Flash drive, Cellphone</musicsource>
-        <degreeofdistortion-%>&lt; 0.1%</degreeofdistortion-%>
+        <degreeofdistortion->&lt; 0.1%</degreeofdistortion->
         <bluetoothversion>2.0</bluetoothversion>
       </TechnicalDetail>
     </Item>
@@ -18253,7 +18253,7 @@
         <placeoforigin>Guangdong, China (Mainland)</placeoforigin>
         <brandname>OITez</brandname>
         <modelnumber>DP-R05</modelnumber>
-        <1.0megasensor>2.4" TFT LCD</1.0megasensor>
+        <a10megasensor>2.4" TFT LCD</a10megasensor>
       </TechnicalDetail>
     </Item>
     <Item>
@@ -18578,7 +18578,7 @@
         <network>GSM/GPRS 850/900/1800/1900MHz</network>
         <use>Automotive</use>
         <simcard>Single Micro Sim Card Slot</simcard>
-        <obdii,fms,j1939,j1708protocol>yes</obdii,fms,j1939,j1708protocol>
+        <obdiifmsj1939j1708protocol>yes</obdiifmsj1939j1708protocol>
         <dimension>90x46x28mm</dimension>
       </TechnicalDetail>
     </Item>
@@ -18697,7 +18697,7 @@
         <visualangleofview>170°</visualangleofview>
         <camerapixel>1080P</camerapixel>
         <color>dark grey</color>
-        <360viewcarcamerasystem>support</360viewcarcamerasystem>
+        <a360viewcarcamerasystem>support</a360viewcarcamerasystem>
       </TechnicalDetail>
     </Item>
     <Item>
