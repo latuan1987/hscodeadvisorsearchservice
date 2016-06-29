@@ -148,8 +148,10 @@ func indexData(i bleve.Index) error {
 				dataInfo := DataInfo{
 					DATE:     time.Now(),
 					CATEGORY: productGroups.ProductGroupName,
-					HSCODE:   productItem.HsCode,
-					PRODDESC: productItem.Desc}
+					HSCODE:   productItem.HsCode[0:6],
+					PRODDESC: productItem.Desc,
+					TARIFFCODE: productItem.HsCode,
+				}
 
 				// Index
 				if err = batch.Index(strconv.FormatUint(globDocId, 10), dataInfo); err != nil {
@@ -185,7 +187,8 @@ func indexData(i bleve.Index) error {
 					DATE:     time.Now(),
 					CATEGORY: listItems.ListItemsType,
 					PRODDESC: item.ItemName,
-					PICTURE:  item.ImageURL}
+					PICTURE:  item.ImageURL,
+				}
 
 				// Index
 				if err = batch.Index(strconv.FormatUint(globDocId, 10), dataInfo); err != nil {
