@@ -58,6 +58,7 @@ func searchIndex(rw http.ResponseWriter, req *http.Request) {
 	var resData []DataInfo
 
 	var id uint64
+	var date time.Time
 	var category string
 	var proddesc string
 	var picture string
@@ -74,6 +75,11 @@ func searchIndex(rw http.ResponseWriter, req *http.Request) {
 			switch name := field.Name(); name {
 			case "id":
 				id, _ = strconv.ParseUint(string(hit.ID), 10, 64)
+			case "Date":
+				date, err = time.Parse(time.RFC3339, string(field.Value()[:]))
+				if err != nil {
+					log.Println(err)
+				}
 			case "Category":
 				category = string(field.Value()[:])
 			case "ProductDescription":
@@ -96,7 +102,7 @@ func searchIndex(rw http.ResponseWriter, req *http.Request) {
 		// Write JSON data to response body
 		dataInfo := DataInfo{
 			ID:         id,
-			DATE:       time.Now(),
+			DATE:       date,
 			CATEGORY:   category,
 			PRODDESC:   proddesc,
 			PICTURE:    encodeImgUrlToBase64(picture),
@@ -123,9 +129,18 @@ func searchIndex(rw http.ResponseWriter, req *http.Request) {
 	rw.Write(encoder)
 }
 
+func buildDbRequest(rw http.ResponseWriter, req *http.Request) {
+	err := buildDatabase()
+	if err != nil {
+		http.Error(rw, err.Error(), http.StatusInternalServerError)
+	}
+
+	rw.WriteHeader(http.StatusOK)
+	rw.Write([]byte("true"))
+}
+
 func encodeImgUrlToBase64(url string) string {
 	if url == "" {
-		log.Println("[encodeImgUrlToBase64]: url empty")
 		return url
 	}
 

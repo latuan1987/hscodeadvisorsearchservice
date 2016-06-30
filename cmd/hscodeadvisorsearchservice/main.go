@@ -10,8 +10,10 @@
 package main
 
 import (
+	"database/sql"
 	"flag"
 	"github.com/blevesearch/bleve"
+	_ "github.com/lib/pq"
 	"github.com/rs/cors"
 	"log"
 	"net/http"
@@ -21,8 +23,15 @@ import (
 var xmlDir = flag.String("xmlDir", "data/", "xml directory")
 var indexPath = flag.String("index", "hscode-search.bleve", "index path")
 var batchSize = flag.Int("batchSize", 100, "batch size for indexing")
+
+var db *sql.DB = nil
 var dataIndex bleve.Index
-var globDocId uint64
+
+const (
+	DB_USER     = "postgres"
+	DB_PASSWORD = "tuandino"
+	DB_NAME     = "postgres"
+)
 
 func main() {
 	port := os.Getenv("PORT")
@@ -34,8 +43,16 @@ func main() {
 
 	flag.Parse()
 
-	// open the index
+	// Database connection
 	var err error
+	//dbinfo := fmt.Sprintf("user=%s password=%s dbname=%s sslmode=disable", DB_USER, DB_PASSWORD, DB_NAME)
+	//db, err = sql.Open("postgres", dbinfo)
+	db, err = sql.Open("postgres", "postgres://nlvgftvgexmgps:Vv8EoKoMOHjsYbtlcyjSjzGZkR@ec2-54-243-204-221.compute-1.amazonaws.com:5432/ddb7asusq3fjiu")
+	if err != nil {
+		log.Fatalf("Error opening database: %q", err)
+	}
+
+	// open the index
 	dataIndex, err = bleve.Open(*indexPath)
 	if err == bleve.ErrorIndexPathDoesNotExist {
 		log.Printf("Creating new index...")
@@ -49,8 +66,6 @@ func main() {
 			log.Fatal(err)
 		}
 
-		globDocId = 1
-
 		// index data in the background
 		go func() {
 			err = indexData(dataIndex)
@@ -60,24 +75,11 @@ func main() {
 		}()
 	} else if err != nil {
 		log.Fatal(err)
-	} else {
-		log.Printf("Opening existing index...")
-		globDocId, err = dataIndex.DocCount()
-		globDocId++
-		if err != nil {
-			log.Fatal(err)
-		}
-		// index data in the background
-		go func() {
-			err = indexData(dataIndex)
-			if err != nil {
-				log.Fatal(err)
-			}
-		}()
 	}
 
 	mux := http.NewServeMux()
 	mux.HandleFunc("/search", searchIndex)
+	mux.HandleFunc("/dbbuilder", buildDbRequest)
 
 	// cors.Default() setup the middleware with default options being
 	// all origins accepted with simple methods (GET, POST). See
