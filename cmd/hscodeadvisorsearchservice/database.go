@@ -11,10 +11,12 @@ package main
 
 import (
 	"database/sql"
+	b64 "encoding/base64"
 	"encoding/xml"
 	_ "github.com/lib/pq"
 	"io/ioutil"
 	"log"
+	"net/http"
 	"os"
 	"path/filepath"
 	"strings"

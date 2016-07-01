@@ -10,7 +10,6 @@
 package main
 
 import (
-	b64 "encoding/base64"
 	"encoding/json"
 	"github.com/blevesearch/bleve"
 	"io/ioutil"
