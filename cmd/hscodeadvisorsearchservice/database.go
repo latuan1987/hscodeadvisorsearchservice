@@ -241,7 +241,7 @@ func queryDataByID(searchID uint64) (DataInfo, error) {
 			DATE:       date,
 			CATEGORY:   category.String,
 			PRODDESC:   proddesc.String,
-			PICTURE:    picture.String,
+			PICTURE:    encodeImgUrlToBase64(picture.String),
 			HSCODE:     hscode.String,
 			COUNTRY:    country.String,
 			TARIFFCODE: tariffcode.String,
@@ -251,4 +251,24 @@ func queryDataByID(searchID uint64) (DataInfo, error) {
 	}
 
 	return retData, nil
+}
+
+func encodeImgUrlToBase64(url string) string {
+	if url == "" {
+		return url
+	}
+
+	resp, err := http.Get(url)
+	if err != nil {
+		log.Println(err)
+		return url
+	}
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		log.Println(err)
+		return url
+	}
+	sEnc := b64.StdEncoding.EncodeToString([]byte(body))
+	return sEnc
 }
