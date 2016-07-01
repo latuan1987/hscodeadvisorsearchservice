@@ -47,7 +47,7 @@ func main() {
 	var err error
 	//dbinfo := fmt.Sprintf("user=%s password=%s dbname=%s sslmode=disable", DB_USER, DB_PASSWORD, DB_NAME)
 	//db, err = sql.Open("postgres", dbinfo)
-	db, err = sql.Open("postgres", "postgres://nlvgftvgexmgps:Vv8EoKoMOHjsYbtlcyjSjzGZkR@ec2-54-243-204-221.compute-1.amazonaws.com:5432/ddb7asusq3fjiu")
+	db, err = sql.Open("postgres", "postgres://xujwrepngbgyza:NcmlowdnyJ2pl-7tHlCAn_RWzC@ec2-54-163-248-218.compute-1.amazonaws.com:5432/d2tg661v75u2vd")
 	if err != nil {
 		log.Fatalf("Error opening database: %q", err)
 	}

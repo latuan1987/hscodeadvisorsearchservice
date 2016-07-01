@@ -85,6 +85,7 @@ func buildDbRequest(rw http.ResponseWriter, req *http.Request) {
 	err := buildDatabase()
 	if err != nil {
 		http.Error(rw, err.Error(), http.StatusInternalServerError)
+		return
 	}
 
 	rw.WriteHeader(http.StatusOK)
