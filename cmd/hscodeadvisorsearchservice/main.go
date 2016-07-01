@@ -75,6 +75,8 @@ func main() {
 		}()
 	} else if err != nil {
 		log.Fatal(err)
+	} else {
+		log.Printf("Opening existing index...")
 	}
 
 	mux := http.NewServeMux()

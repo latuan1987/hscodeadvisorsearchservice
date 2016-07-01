@@ -33,6 +33,7 @@ var CREATE_TABLE string = `CREATE TABLE IF NOT EXISTS Products (ID SERIAL PRIMAR
 																Vote text)`
 var DELETE_ROWS string = "DELETE FROM Products"
 var FETCH_ALL string = "SELECT * FROM Products"
+var FETCH_ROW_BY_ID string = "SELECT * FROM Products WHERE ID=$1"
 var INSERT_STMT string = `INSERT INTO Products (Category,
 												ProductDescription,
 												Picture,
@@ -154,19 +155,19 @@ func buildDatabase() error {
 }
 
 func fetchAllFromProduct() ([]DataInfo, error) {
-	var resData []DataInfo
+	var retData []DataInfo
 	var err error
 
 	// Creating table
 	if _, err = db.Exec(CREATE_TABLE); err != nil {
 		log.Printf("Error creating new table: %q", err)
-		return resData, err
+		return retData, err
 	}
 
 	rows, err := db.Query(FETCH_ALL)
 	if err != nil {
 		log.Printf("Error fetching all data: %q", err)
-		return resData, err
+		return retData, err
 	}
 	defer rows.Close()
 
@@ -186,12 +187,11 @@ func fetchAllFromProduct() ([]DataInfo, error) {
 			log.Printf("Error scaning rows: %q", err)
 			break
 		} else {
+			// Skip Date and Picture fields, because no need to index them
 			dataInfo := DataInfo{
 				ID:         id,
-				DATE:       date,
 				CATEGORY:   category.String,
 				PRODDESC:   proddesc.String,
-				PICTURE:    picture.String,
 				HSCODE:     hscode.String,
 				COUNTRY:    country.String,
 				TARIFFCODE: tariffcode.String,
@@ -199,9 +199,56 @@ func fetchAllFromProduct() ([]DataInfo, error) {
 				VOTE:       vote.String,
 			}
 			// Add to array
-			resData = append(resData, dataInfo)
+			retData = append(retData, dataInfo)
 		}
 	}
 
-	return resData, nil
+	if err = rows.Err(); err != nil {
+		// handle the error here
+		log.Printf("Error fetching all data: %q", err)
+		return retData, err
+	}
+
+	return retData, nil
+}
+
+func queryDataByID(searchID uint64) (DataInfo, error) {
+	var retData DataInfo
+	var err error
+
+	var id uint64
+	var date time.Time
+	var category sql.NullString
+	var proddesc sql.NullString
+	var picture sql.NullString
+	var hscode sql.NullString
+	var country sql.NullString
+	var tariffcode sql.NullString
+	var explain sql.NullString
+	var vote sql.NullString
+
+	err = db.QueryRow(FETCH_ROW_BY_ID, searchID).Scan(&id, &date, &category, &proddesc, &picture, &hscode, &country, &tariffcode, &explain, &vote)
+	switch {
+	case err == sql.ErrNoRows:
+		log.Println("No data with that ID.")
+	case err != nil:
+		log.Println(err)
+		return retData, err
+	default:
+		// Create return data from fetched data
+		retData = DataInfo{
+			ID:         id,
+			DATE:       date,
+			CATEGORY:   category.String,
+			PRODDESC:   proddesc.String,
+			PICTURE:    picture.String,
+			HSCODE:     hscode.String,
+			COUNTRY:    country.String,
+			TARIFFCODE: tariffcode.String,
+			EXPLAIN:    explain.String,
+			VOTE:       vote.String,
+		}
+	}
+
+	return retData, nil
 }

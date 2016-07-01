@@ -19,15 +19,15 @@ type jsonRecvQuery struct {
 
 type DataInfo struct {
 	ID         uint64    `json:"id"`
-	DATE       time.Time `json:"Date"`
-	CATEGORY   string    `json:"Category"`
-	PRODDESC   string    `json:"ProductDescription"`
-	PICTURE    string    `json:"Picture"`
-	HSCODE     string    `json:"WCOHSCode"`
-	COUNTRY    string    `json:"Country"`
-	TARIFFCODE string    `json:"NationalTariffCode"`
-	EXPLAIN    string    `json:"ExplanationSheet"`
-	VOTE       string    `json:"Vote"`
+	DATE       time.Time `json:"Date,omitempty"`
+	CATEGORY   string    `json:"Category,omitempty"`
+	PRODDESC   string    `json:"ProductDescription,omitempty"`
+	PICTURE    string    `json:"Picture,omitempty"`
+	HSCODE     string    `json:"WCOHSCode,omitempty"`
+	COUNTRY    string    `json:"Country,omitempty"`
+	TARIFFCODE string    `json:"NationalTariffCode,omitempty"`
+	EXPLAIN    string    `json:"ExplanationSheet,omitempty"`
+	VOTE       string    `json:"Vote,omitempty"`
 }
 
 type ImportData struct {

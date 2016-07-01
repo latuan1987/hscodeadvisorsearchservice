@@ -17,7 +17,6 @@ import (
 	"log"
 	"net/http"
 	"strconv"
-	"time"
 )
 
 func searchIndex(rw http.ResponseWriter, req *http.Request) {
@@ -55,69 +54,22 @@ func searchIndex(rw http.ResponseWriter, req *http.Request) {
 	}
 
 	// Output data
-	var resData []DataInfo
-
-	var id uint64
-	var date time.Time
-	var category string
-	var proddesc string
-	var picture string
-	var hscode string
-	var country string
-	var tariffcode string
-	var explain string
-	var vote string
-
+	var responseData []DataInfo
 	for _, hit := range searchResult.Hits {
-		doc, _ := dataIndex.Document(hit.ID)
-
-		for _, field := range doc.Fields {
-			switch name := field.Name(); name {
-			case "id":
-				id, _ = strconv.ParseUint(string(hit.ID), 10, 64)
-			case "Date":
-				date, err = time.Parse(time.RFC3339, string(field.Value()[:]))
-				if err != nil {
-					log.Println(err)
-				}
-			case "Category":
-				category = string(field.Value()[:])
-			case "ProductDescription":
-				proddesc = string(field.Value()[:])
-			case "Picture":
-				picture = string(field.Value()[:])
-			case "WCOHSCode":
-				hscode = string(field.Value()[:])
-			case "Country":
-				country = string(field.Value()[:])
-			case "NationalTariffCode":
-				tariffcode = string(field.Value()[:])
-			case "ExplanationSheet":
-				explain = string(field.Value()[:])
-			case "Vote":
-				vote = string(field.Value()[:])
-			default:
+		if id, err := strconv.ParseUint(string(hit.ID), 10, 64); err == nil {
+			queryData, err := queryDataByID(id)
+			if err != nil {
+				log.Println(err)
+				continue
 			}
+			// Add to array
+			responseData = append(responseData, queryData)
+		} else {
+			log.Println(err)
 		}
-		// Write JSON data to response body
-		dataInfo := DataInfo{
-			ID:         id,
-			DATE:       date,
-			CATEGORY:   category,
-			PRODDESC:   proddesc,
-			PICTURE:    encodeImgUrlToBase64(picture),
-			HSCODE:     hscode,
-			COUNTRY:    country,
-			TARIFFCODE: tariffcode,
-			EXPLAIN:    explain,
-			VOTE:       vote,
-		}
-
-		// Add to array
-		resData = append(resData, dataInfo)
 	}
 
-	encoder, err := json.Marshal(resData)
+	encoder, err := json.Marshal(responseData)
 	if err != nil {
 		log.Printf("Error encoding respond data: %q", err)
 		http.Error(rw, err.Error(), http.StatusInternalServerError)
