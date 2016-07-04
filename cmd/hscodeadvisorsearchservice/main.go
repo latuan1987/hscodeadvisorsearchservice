@@ -80,7 +80,7 @@ func main() {
 	}
 
 	mux := http.NewServeMux()
-	mux.HandleFunc("/search", searchIndex)
+	mux.HandleFunc("/search", bleveSearch)
 	mux.HandleFunc("/dbbuilder", buildDbRequest)
 
 	// cors.Default() setup the middleware with default options being

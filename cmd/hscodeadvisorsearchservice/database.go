@@ -19,6 +19,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -191,9 +192,11 @@ func fetchAllFromProduct() ([]DataInfo, error) {
 		} else {
 			// Skip Date and Picture fields, because no need to index them
 			dataInfo := DataInfo{
-				ID:         id,
+				ID:         strconv.FormatUint(id, 10),
+				DATE:       date.Format("02/Jan/2006"),
 				CATEGORY:   category.String,
 				PRODDESC:   proddesc.String,
+				PICTURE:    picture.String,
 				HSCODE:     hscode.String,
 				COUNTRY:    country.String,
 				TARIFFCODE: tariffcode.String,
@@ -239,8 +242,8 @@ func queryDataByID(searchID uint64) (DataInfo, error) {
 	default:
 		// Create return data from fetched data
 		retData = DataInfo{
-			ID:         id,
-			DATE:       date,
+			ID:         strconv.FormatUint(id, 10),
+			DATE:       date.Format("02/Jan/2006"),
 			CATEGORY:   category.String,
 			PRODDESC:   proddesc.String,
 			PICTURE:    encodeImgUrlToBase64(picture.String),

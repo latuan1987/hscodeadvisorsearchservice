@@ -12,7 +12,6 @@ package main
 import (
 	"github.com/blevesearch/bleve"
 	"log"
-	"strconv"
 	"time"
 )
 
@@ -48,7 +47,7 @@ func indexData(i bleve.Index) error {
 	// Insert data to table and make indexing
 	for _, dataInfo := range dataList {
 		// Index
-		if err = batch.Index(strconv.FormatUint(dataInfo.ID, 10), dataInfo); err != nil {
+		if err = batch.Index(dataInfo.ID, dataInfo); err != nil {
 			log.Println(err)
 			return err
 		}

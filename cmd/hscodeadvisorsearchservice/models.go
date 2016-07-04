@@ -9,25 +9,21 @@
 
 package main
 
-import (
-	"time"
-)
-
 type jsonRecvQuery struct {
 	QUERYSTRING string `json:"query"`
 }
 
 type DataInfo struct {
-	ID         uint64    `json:"id"`
-	DATE       time.Time `json:"Date"`
-	CATEGORY   string    `json:"Category"`
-	PRODDESC   string    `json:"ProductDescription"`
-	PICTURE    string    `json:"Picture"`
-	HSCODE     string    `json:"WCOHSCode"`
-	COUNTRY    string    `json:"Country"`
-	TARIFFCODE string    `json:"NationalTariffCode"`
-	EXPLAIN    string    `json:"ExplanationSheet"`
-	VOTE       string    `json:"Vote"`
+	ID         string `json:"id"`
+	DATE       string `json:"Date"`
+	CATEGORY   string `json:"Category"`
+	PRODDESC   string `json:"ProductDescription"`
+	PICTURE    string `json:"Picture"`
+	HSCODE     string `json:"WCOHSCode"`
+	COUNTRY    string `json:"Country"`
+	TARIFFCODE string `json:"NationalTariffCode"`
+	EXPLAIN    string `json:"ExplanationSheet"`
+	VOTE       string `json:"Vote"`
 }
 
 type ImportData struct {
