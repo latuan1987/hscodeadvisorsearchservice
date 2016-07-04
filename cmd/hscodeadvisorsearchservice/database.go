@@ -144,7 +144,7 @@ func buildDatabase() error {
 		for _, listItems := range importDataItem.ListItems {
 			for _, item := range listItems.Items {
 				// Insert Alibaba data
-				_, err = stmt.Exec(listItems.ListItemsType, item.ItemName, item.ImageURL, "", "", "", "", "")
+				_, err = stmt.Exec(listItems.ListItemsType, item.ItemName, encodeImgUrlToBase64(item.ImageURL), "", "", "", "", "")
 				if err != nil {
 					log.Printf("Error inserting: %q", err)
 					return err
@@ -157,8 +157,8 @@ func buildDatabase() error {
 	return nil
 }
 
-func fetchAllFromProduct() ([]DataInfo, error) {
-	var retData []DataInfo
+func fetchAllFromProduct() ([]MappingData, error) {
+	var retData []MappingData
 	var err error
 
 	// Creating table
@@ -191,20 +191,21 @@ func fetchAllFromProduct() ([]DataInfo, error) {
 			break
 		} else {
 			// Skip Date and Picture fields, because no need to index them
-			dataInfo := DataInfo{
-				ID:         strconv.FormatUint(id, 10),
-				DATE:       date.Format("02/Jan/2006"),
-				CATEGORY:   category.String,
-				PRODDESC:   proddesc.String,
-				PICTURE:    picture.String,
-				HSCODE:     hscode.String,
-				COUNTRY:    country.String,
-				TARIFFCODE: tariffcode.String,
-				EXPLAIN:    explain.String,
-				VOTE:       vote.String,
+
+			mappingData := MappingData{
+				DOCID: strconv.FormatUint(id, 10),
+				DOCUMENT: DataInfo{
+					CATEGORY:   category.String,
+					PRODDESC:   proddesc.String,
+					HSCODE:     hscode.String,
+					COUNTRY:    country.String,
+					TARIFFCODE: tariffcode.String,
+					EXPLAIN:    explain.String,
+					VOTE:       vote.String,
+				},
 			}
 			// Add to array
-			retData = append(retData, dataInfo)
+			retData = append(retData, mappingData)
 		}
 	}
 
@@ -246,7 +247,7 @@ func queryDataByID(searchID uint64) (DataInfo, error) {
 			DATE:       date.Format("02/Jan/2006"),
 			CATEGORY:   category.String,
 			PRODDESC:   proddesc.String,
-			PICTURE:    encodeImgUrlToBase64(picture.String),
+			PICTURE:    picture.String,
 			HSCODE:     hscode.String,
 			COUNTRY:    country.String,
 			TARIFFCODE: tariffcode.String,
