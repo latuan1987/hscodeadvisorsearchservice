@@ -16,6 +16,7 @@ import (
 	"log"
 	"net/http"
 	"strconv"
+	"time"
 )
 
 func bleveSearchAndFetchDataFromDB(rw http.ResponseWriter, req *http.Request) {
@@ -81,6 +82,7 @@ func bleveSearchAndFetchDataFromDB(rw http.ResponseWriter, req *http.Request) {
 }
 
 func bleveSearch(rw http.ResponseWriter, req *http.Request) {
+	log.Println(time.Now())
 	// Get passed parameter
 	body, err := ioutil.ReadAll(req.Body)
 	if err != nil {
@@ -185,6 +187,8 @@ func bleveSearch(rw http.ResponseWriter, req *http.Request) {
 	// Write JSON data to response body
 	rw.Header().Set("Content-Type", "application/json")
 	rw.Write(encoder)
+
+	log.Println(time.Now())
 }
 
 func buildDbRequest(rw http.ResponseWriter, req *http.Request) {
