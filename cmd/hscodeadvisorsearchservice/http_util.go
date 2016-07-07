@@ -37,7 +37,8 @@ func bleveSearchAndFetchDataFromDB(rw http.ResponseWriter, req *http.Request) {
 	}
 
 	// Query data
-	query := bleve.NewMatchQuery(recvQuery.QUERYSTRING)
+	// We are looking to an product data with some string which match with dotGo
+	query := bleve.NewMatchPhraseQuery(recvQuery.QUERYSTRING)
 	searchRequest := bleve.NewSearchRequestOptions(query, 100, 0, false)
 	searchResult, err := dataIndex.Search(searchRequest)
 	if err != nil {
