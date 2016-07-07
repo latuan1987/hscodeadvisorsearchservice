@@ -51,8 +51,3 @@ type Item struct {
 	ItemName string `xml:"ItemName"`
 	FOBPrice string `xml:"FOBPrice"`
 }
-
-type MappingData struct {
-	DOCID    string
-	DOCUMENT DataInfo
-}

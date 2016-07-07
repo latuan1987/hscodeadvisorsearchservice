@@ -163,7 +163,7 @@ func bleveSearch(rw http.ResponseWriter, req *http.Request) {
 			DATE:       date,
 			CATEGORY:   category,
 			PRODDESC:   proddesc,
-			PICTURE:    picture,
+			PICTURE:    encodeImgUrlToBase64(picture),
 			HSCODE:     hscode,
 			COUNTRY:    country,
 			TARIFFCODE: tariffcode,

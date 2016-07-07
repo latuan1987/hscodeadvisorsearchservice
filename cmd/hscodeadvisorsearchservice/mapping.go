@@ -24,15 +24,15 @@ func buildIndexMapping() (*bleve.IndexMapping, error) {
 func indexData(i bleve.Index) error {
 
 	// Fetching all data from database
-	var mappingList []MappingData
+	var dataList []DataInfo
 	var err error
 
-	mappingList, err = fetchAllFromProduct()
+	dataList, err = fetchAllFromProduct()
 	if err != nil {
 		return err
 	}
 
-	if len(mappingList) == 0 {
+	if len(dataList) == 0 {
 		log.Println("Database empty")
 		return nil
 	}
@@ -45,9 +45,9 @@ func indexData(i bleve.Index) error {
 	batchCount := 0
 
 	// Insert data to table and make indexing
-	for _, mappindData := range mappingList {
+	for _, dataInfo := range dataList {
 		// Index
-		if err = batch.Index(mappindData.DOCID, mappindData.DOCUMENT); err != nil {
+		if err = batch.Index(dataInfo.ID, dataInfo); err != nil {
 			log.Println(err)
 			return err
 		}
