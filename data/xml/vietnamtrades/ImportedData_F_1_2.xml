@@ -1,0 +1,1222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+  <productGroup name="fabric - Import Data">
+    <product>
+      <hsCode>60064290</hsCode>
+      <productDesc>100% polyester fabric K56 / 58</productDesc>
+    </product>
+    <product>
+      <hsCode>55121900</hsCode>
+      <productDesc>85% polyester15% nylon fabric K54 / 56</productDesc>
+    </product>
+    <product>
+      <hsCode>55121900</hsCode>
+      <productDesc>Fabric 80% wool17% nylon3% other K58 / 60</productDesc>
+    </product>
+    <product>
+      <hsCode>58079000</hsCode>
+      <productDesc>Label fabrics</productDesc>
+    </product>
+    <product>
+      <hsCode>58079000</hsCode>
+      <productDesc>Label fabrics</productDesc>
+    </product>
+    <product>
+      <hsCode>55159990</hsCode>
+      <productDesc>55% density fabric linen 45% rayon 51 '</productDesc>
+    </product>
+    <product>
+      <hsCode>60062200</hsCode>
+      <productDesc>Knitted fabric from cotton, k 64-66 '' (60% cotton fabric 40% polyester) (9773 yds)</productDesc>
+    </product>
+    <product>
+      <hsCode>60063290</hsCode>
+      <productDesc>Knitted fabrics from synthetic fiber, 59-61 k '' (100% polyester fabric) (5947 yds)</productDesc>
+    </product>
+    <product>
+      <hsCode>60063290</hsCode>
+      <productDesc>Knitted fabrics from synthetic fiber, 70-72 k '' (100% polyester fabric) (2630 yds)</productDesc>
+    </product>
+    <product>
+      <hsCode>60062200</hsCode>
+      <productDesc>Knitted fabric from cotton, k 64-66 '' (60% cotton fabric 20% polyester 20% rayon) (3474 yds)</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="fabric canvas - Import Data">
+    <product>
+      <hsCode>59070060</hsCode>
+      <productDesc>First round canvas cover ventilation, D180mm, wired L = 400mm, with plastic coated fabrics</productDesc>
+    </product>
+    <product>
+      <hsCode>72111919</hsCode>
+      <productDesc>100% cotton fabric 100% COTTON CANVAS 10S * 10S / 70 * 42 56 "</productDesc>
+    </product>
+    <product>
+      <hsCode>59070090</hsCode>
+      <productDesc>Plastic coated nylon fabric used canvas size: 2.4m up, the new 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>90318090</hsCode>
+      <productDesc>Fabrics (canvas, 100% cotton, width 54 "- 361.12 YDS)</productDesc>
+    </product>
+    <product>
+      <hsCode>55159990</hsCode>
+      <productDesc>Fabric 44 "canvas</productDesc>
+    </product>
+    <product>
+      <hsCode>60062200</hsCode>
+      <productDesc>Knitted fabric from cotton, k 65-67 '' (100% cotton canvas) (44079.5 yds)</productDesc>
+    </product>
+    <product>
+      <hsCode>83040099</hsCode>
+      <productDesc>Fabrics (canvas, 100% cotton, width 54 "- 660 YDS)</productDesc>
+    </product>
+    <product>
+      <hsCode>59070060</hsCode>
+      <productDesc>First round canvas cover ventilation, D180mm, wired L = 400mm, with plastic coated fabrics</productDesc>
+    </product>
+    <product>
+      <hsCode>59070060</hsCode>
+      <productDesc>First round canvas cover ventilation, D180mm, wired L = 400mm, with plastic coated fabrics</productDesc>
+    </product>
+    <product>
+      <hsCode>60062200</hsCode>
+      <productDesc>Knitted fabric from cotton, k 65-67 '' (100% cotton canvas) (18684.5 yds)</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="fabric cotton - Import Data">
+    <product>
+      <hsCode>60062200</hsCode>
+      <productDesc>Knitted fabric from cotton, k 64-66 '' (60% cotton fabric 40% polyester) (9773 yds)</productDesc>
+    </product>
+    <product>
+      <hsCode>60062200</hsCode>
+      <productDesc>Knitted fabric from cotton, k 64-66 '' (60% cotton fabric 20% polyester 20% rayon) (3474 yds)</productDesc>
+    </product>
+    <product>
+      <hsCode>60062400</hsCode>
+      <productDesc>Knitted fabrics, 100% COTTON (size 72/74 "- 37 937 yds)</productDesc>
+    </product>
+    <product>
+      <hsCode>60063190</hsCode>
+      <productDesc>Fabric 35% cotton 65% polyester;size: 78-80 "</productDesc>
+    </product>
+    <product>
+      <hsCode>60049000</hsCode>
+      <productDesc>Knitted Fabric 10% Poly 89% Cotton 1% Spandex size 60/61 '' (= 411 yds)</productDesc>
+    </product>
+    <product>
+      <hsCode>52081900</hsCode>
+      <productDesc>Fabric 67% cotton 33% polyester</productDesc>
+    </product>
+    <product>
+      <hsCode>52081900</hsCode>
+      <productDesc>100% cotton fabric</productDesc>
+    </product>
+    <product>
+      <hsCode>52081900</hsCode>
+      <productDesc>Fabric 67% cotton 33% polyester</productDesc>
+    </product>
+    <product>
+      <hsCode>52081900</hsCode>
+      <productDesc>100% cotton fabric</productDesc>
+    </product>
+    <product>
+      <hsCode>52091900</hsCode>
+      <productDesc>The main fabric 100% cotton</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="fabric markers - Import Data">
+    <product>
+      <hsCode>96082000</hsCode>
+      <productDesc>Loom fabric markers: PEN MARK YELLOW</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="fabric modal - Import Data">
+    <product>
+      <hsCode>60049000</hsCode>
+      <productDesc>Fabric 60% Cotton 40% Modal</productDesc>
+    </product>
+    <product>
+      <hsCode>60049000</hsCode>
+      <productDesc>Fabric 57% Cotton 38% Modal 5% Spandex</productDesc>
+    </product>
+    <product>
+      <hsCode>52111900</hsCode>
+      <productDesc>Fabric 94% Modal 6% spandex</productDesc>
+    </product>
+    <product>
+      <hsCode>52111900</hsCode>
+      <productDesc>Fabric 94% Modal 6% spandex</productDesc>
+    </product>
+    <product>
+      <hsCode>52111900</hsCode>
+      <productDesc>Fabric 94% Modal 6% spandex</productDesc>
+    </product>
+    <product>
+      <hsCode>54075400</hsCode>
+      <productDesc>Main Fabric 56% Cotton 38% Modal 6% Spandex (60 '')</productDesc>
+    </product>
+    <product>
+      <hsCode>54075400</hsCode>
+      <productDesc>Main Fabric 56% Cotton 38% Modal 6% Spandex (63 '')</productDesc>
+    </product>
+    <product>
+      <hsCode>52102900</hsCode>
+      <productDesc>Fabric 60% Cotton 40% Modal 58 ~ 60 suffering "</productDesc>
+    </product>
+    <product>
+      <hsCode>54079200</hsCode>
+      <productDesc>Woven fabrics 69% modal 27% polyester 4% spandex suffering 111.76cm</productDesc>
+    </product>
+    <product>
+      <hsCode>60062300</hsCode>
+      <productDesc>Main Fabric 60% Cotton 40% Modal (White. Solid &amp; HTHR), size 66/68 "</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="fabric polyester - Import Data">
+    <product>
+      <hsCode>60064290</hsCode>
+      <productDesc>100% polyester fabric K56 / 58</productDesc>
+    </product>
+    <product>
+      <hsCode>60062200</hsCode>
+      <productDesc>Knitted fabric from cotton, k 64-66 '' (60% cotton fabric 40% polyester) (9773 yds)</productDesc>
+    </product>
+    <product>
+      <hsCode>60063290</hsCode>
+      <productDesc>Knitted fabrics from synthetic fiber, 59-61 k '' (100% polyester fabric) (5947 yds)</productDesc>
+    </product>
+    <product>
+      <hsCode>60063290</hsCode>
+      <productDesc>Knitted fabrics from synthetic fiber, 70-72 k '' (100% polyester fabric) (2630 yds)</productDesc>
+    </product>
+    <product>
+      <hsCode>60062200</hsCode>
+      <productDesc>Knitted fabric from cotton, k 64-66 '' (60% cotton fabric 20% polyester 20% rayon) (3474 yds)</productDesc>
+    </product>
+    <product>
+      <hsCode>55121900</hsCode>
+      <productDesc>Fabric 100% Polyester</productDesc>
+    </product>
+    <product>
+      <hsCode>55121900</hsCode>
+      <productDesc>Fabric 100% Polyester</productDesc>
+    </product>
+    <product>
+      <hsCode>55121900</hsCode>
+      <productDesc>Fabric 100% Polyester</productDesc>
+    </product>
+    <product>
+      <hsCode>55121900</hsCode>
+      <productDesc>Fabric 100% Polyester</productDesc>
+    </product>
+    <product>
+      <hsCode>55121900</hsCode>
+      <productDesc>100% polyester woven fabric 2.2m wide flat size (length 22345m)</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="fabric rayon - Import Data">
+    <product>
+      <hsCode>55159990</hsCode>
+      <productDesc>55% density fabric linen 45% rayon 51 '</productDesc>
+    </product>
+    <product>
+      <hsCode>60062200</hsCode>
+      <productDesc>Knitted fabric from cotton, k 64-66 '' (60% cotton fabric 20% polyester 20% rayon) (3474 yds)</productDesc>
+    </product>
+    <product>
+      <hsCode>60069000</hsCode>
+      <productDesc>67% rayon fabric 33% poly K56 / 57 "</productDesc>
+    </product>
+    <product>
+      <hsCode>60069000</hsCode>
+      <productDesc>The main fabric 25% rayon 71% poly 4% spandx k58 / 60</productDesc>
+    </product>
+    <product>
+      <hsCode>52081900</hsCode>
+      <productDesc>Fabric 75% POLYESTER 25% RAYON</productDesc>
+    </product>
+    <product>
+      <hsCode>60063290</hsCode>
+      <productDesc>Fabric 74% rayon 22% nylon 4% spandex K58 / 60 '</productDesc>
+    </product>
+    <product>
+      <hsCode>60049000</hsCode>
+      <productDesc>Fabric 70% Acrylic 30% Viscose / Rayon</productDesc>
+    </product>
+    <product>
+      <hsCode>60049000</hsCode>
+      <productDesc>Fabric 70% Acrylic 30% Viscose / Rayon</productDesc>
+    </product>
+    <product>
+      <hsCode>60049000</hsCode>
+      <productDesc>Fabric 70% Acrylic 30% Viscose / Rayon</productDesc>
+    </product>
+    <product>
+      <hsCode>60049000</hsCode>
+      <productDesc>Fabric 38% Polyester 34% Acrylic 18% Viscose / Rayon 10% Spandex / elastane / lycra</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="fabric softener - Import Data">
+    <product>
+      <hsCode>34029099</hsCode>
+      <productDesc>Kodomo soft fabric softener 700ml (1 barrels 12 bags of 700ml), new 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>34029099</hsCode>
+      <productDesc>Kodomo soft fabric softener 1000ml (1 barrels 12 1000ml bottle), a new 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>34029099</hsCode>
+      <productDesc>Soft fabric softener kodomo Malodor 700ml (1 barrels 12 bags of 700ml), new 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>34029015</hsCode>
+      <productDesc>Fabric softener chemicals</productDesc>
+    </product>
+    <product>
+      <hsCode>33029000</hsCode>
+      <productDesc>Materials &amp; fabric softener water - mixtures of odoriferous substances used in industry - Phoenix 445 PCMF NI</productDesc>
+    </product>
+    <product>
+      <hsCode>38099110</hsCode>
+      <productDesc>Powder, fabric softener (Fatty Acid Amide90-95%; Fatty Alcohol Polyether 10-5%)</productDesc>
+    </product>
+    <product>
+      <hsCode>38099110</hsCode>
+      <productDesc>Fabric softener aqueous solution (Amino Silicone 40-50% 30-20% Fatty Alcohol Ethoxylates; Water 30-40%)</productDesc>
+    </product>
+    <product>
+      <hsCode>38099110</hsCode>
+      <productDesc>fabric softener, smooth, 20lít / barrel, a new 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>38099110</hsCode>
+      <productDesc>CONC ELASTOJET fabric softener, new 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>38099110</hsCode>
+      <productDesc>Silicon fabric softener lake DECOSOFT CONC ES), new 100%</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="fabrics polyester - Import Data">
+    <product>
+      <hsCode>60063290</hsCode>
+      <productDesc>Knitted fabrics from synthetic fiber, 59-61 k '' (100% polyester fabric) (5947 yds)</productDesc>
+    </product>
+    <product>
+      <hsCode>60063290</hsCode>
+      <productDesc>Knitted fabrics from synthetic fiber, 70-72 k '' (100% polyester fabric) (2630 yds)</productDesc>
+    </product>
+    <product>
+      <hsCode>55129900</hsCode>
+      <productDesc>Woven fabrics 97% polyester 3% spandex size 57/58 "(7935Yds)</productDesc>
+    </product>
+    <product>
+      <hsCode>55131900</hsCode>
+      <productDesc>Woven fabrics 35% cotton 65% polyester 57/58 '' - 2399.1 M</productDesc>
+    </product>
+    <product>
+      <hsCode>55131900</hsCode>
+      <productDesc>Woven fabrics of cotton 60% polyester 40% W57 / 58 "(3117M)</productDesc>
+    </product>
+    <product>
+      <hsCode>52105990</hsCode>
+      <productDesc>Woven fabrics of 50% cotton, 50% polyester W57 / 58 "(11635M)</productDesc>
+    </product>
+    <product>
+      <hsCode>55121900</hsCode>
+      <productDesc>Woven fabrics of synthetic fibers 100% polyester, size 60/61 ", (5003YDS), new 100%.</productDesc>
+    </product>
+    <product>
+      <hsCode>55134900</hsCode>
+      <productDesc>Woven fabrics 80% polyester 20% spandex size 127.00cm</productDesc>
+    </product>
+    <product>
+      <hsCode>60069000</hsCode>
+      <productDesc>94% polyester knitted fabrics 6% Spandex size 59 "color MIDNIGHT (161Y)</productDesc>
+    </product>
+    <product>
+      <hsCode>60069000</hsCode>
+      <productDesc>Felt fabric (size 1.55m) (100% polyester knitted fabrics), used to produce automotive seat. - Fabric Thira 0Tdinh luong387g / m2. New 100%.</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="fabrics rayon - Import Data">
+    <product>
+      <hsCode>55159990</hsCode>
+      <productDesc>Woven fabrics, 100% RAYON (size 52/53 "- 7327.4 yds)</productDesc>
+    </product>
+    <product>
+      <hsCode>52105990</hsCode>
+      <productDesc>Woven Fabrics 72% Cotton 25% Rayon 3% Spandex 44 '' - 2575 Y</productDesc>
+    </product>
+    <product>
+      <hsCode>60059090</hsCode>
+      <productDesc>Fabrics (JERSEY100% RAYON ...)</productDesc>
+    </product>
+    <product>
+      <hsCode>60059090</hsCode>
+      <productDesc>Fabrics (JERSEY100% RAYON ...)</productDesc>
+    </product>
+    <product>
+      <hsCode>60059090</hsCode>
+      <productDesc>Fabrics (AUTO Stripe JERSEY100% RAYON ...)</productDesc>
+    </product>
+    <product>
+      <hsCode>60059090</hsCode>
+      <productDesc>Fabrics (FEEDER Stripe JERSEY100% RAYON ...)</productDesc>
+    </product>
+    <product>
+      <hsCode>60059090</hsCode>
+      <productDesc>Fabrics (FEEDER Stripe JERSEY100% RAYON ...)</productDesc>
+    </product>
+    <product>
+      <hsCode>60059090</hsCode>
+      <productDesc>Fabrics (FEEDER Stripe JERSEY100% RAYON ...)</productDesc>
+    </product>
+    <product>
+      <hsCode>60059090</hsCode>
+      <productDesc>Fabrics (PRINT RAYON JERSEY 95% 5% SPDX OE ...)</productDesc>
+    </product>
+    <product>
+      <hsCode>60059090</hsCode>
+      <productDesc>Fabrics (Reactive PRINT JERSE95% RAYON 5% Spandex ...)</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="fake plastic - Import Data">
+    <product>
+      <hsCode>39269099</hsCode>
+      <productDesc>Kp fake plastic glue surface 1.2mm 2 size 40 ''</productDesc>
+    </product>
+    <product>
+      <hsCode>39269099</hsCode>
+      <productDesc>Kp fake plastic glue surface 2.0mm 2 size 40 ''</productDesc>
+    </product>
+    <product>
+      <hsCode>39269099</hsCode>
+      <productDesc>Kp fake plastic glue surface 2.0mm 2 size 40 ''</productDesc>
+    </product>
+    <product>
+      <hsCode>67021000</hsCode>
+      <productDesc>Fake plastic flowers synthetic high (30-50) cm (New 100%)</productDesc>
+    </product>
+    <product>
+      <hsCode>67021000</hsCode>
+      <productDesc>Fake plastic flowers synthetic high (60- 75) cm (New 100%)</productDesc>
+    </product>
+    <product>
+      <hsCode>39269099</hsCode>
+      <productDesc>Fake plastic ankle kinds</productDesc>
+    </product>
+    <product>
+      <hsCode>67021000</hsCode>
+      <productDesc>Fake leaves, decorative A0, plastic - Hemp LEAF A0, NOT number: Not required</productDesc>
+    </product>
+    <product>
+      <hsCode>67021000</hsCode>
+      <productDesc>Nutriganics leaf fake, plastic, decorative A0 - A0 Nutriganics LEAF, NOT number: Not required</productDesc>
+    </product>
+    <product>
+      <hsCode>67021000</hsCode>
+      <productDesc>Pomegranates fake, decorative A0, plastic - WINDOW PROP Pomegranate A0, NOT number: Not required</productDesc>
+    </product>
+    <product>
+      <hsCode>67021000</hsCode>
+      <productDesc>Tea tree fake, plastic, decorative 2011 A0 - PROP SMALL TREE TEA 2011 A0, NOT number: Not required</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="fan - Import Data">
+    <product>
+      <hsCode>84149021</hsCode>
+      <productDesc>Air cooler fan of 9k BTU (ADP72912103). NEW 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>84679910</hsCode>
+      <productDesc>Fan housings for drills, code 1619PA0723</productDesc>
+    </product>
+    <product>
+      <hsCode>84145949</hsCode>
+      <productDesc>3110KL-04W-B69 fan-E00, which NMB Technologies Corporation</productDesc>
+    </product>
+    <product>
+      <hsCode>84145949</hsCode>
+      <productDesc>3112KL-04W-B50 fan-E00, which NMB Technologies Corporation</productDesc>
+    </product>
+    <product>
+      <hsCode>84149029</hsCode>
+      <productDesc>Rotor motor sewing machine nghiep.OKA HN FAN</productDesc>
+    </product>
+    <product>
+      <hsCode>84145949</hsCode>
+      <productDesc>computer cooling fan 646358-001- SPS-FAN</productDesc>
+    </product>
+    <product>
+      <hsCode>84529099</hsCode>
+      <productDesc>Industrial sewing machine parts: Fan JK oil cap. New 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>84145949</hsCode>
+      <productDesc>Fan cooling of electronic computer 12V DC 60 x 60 mm</productDesc>
+    </product>
+    <product>
+      <hsCode>84145949</hsCode>
+      <productDesc>Fan cooling of electronic computer 12V DC 80 x 80 mm</productDesc>
+    </product>
+    <product>
+      <hsCode>84145949</hsCode>
+      <productDesc>Fan, Part No: 163610L02000, cars HA / FORTUNER G slash, new 100%.</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="fan motor - Import Data">
+    <product>
+      <hsCode>84149029</hsCode>
+      <productDesc>Rotor motor sewing machine nghiep.OKA HN FAN</productDesc>
+    </product>
+    <product>
+      <hsCode>85011049</hsCode>
+      <productDesc>Condenser fan motor (Parts Kia 8 seats or less, the new 100%)</productDesc>
+    </product>
+    <product>
+      <hsCode>85030090</hsCode>
+      <productDesc>Parts of electric motors (motor) multi-phase alternating current signal Dolin:: Caps fan 5HP.Moi 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>85030090</hsCode>
+      <productDesc>Parts of electric motors (motor) multi-phase alternating current signal :: Caps fan Dolin 2HP-3HP.Moi 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>85030090</hsCode>
+      <productDesc>Parts of electric motors (motor) multi-phase alternating current signal Dolin:: Caps fan 1 / 2HP-1HP.Moi 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>84189990</hsCode>
+      <productDesc>Parts warranty, repairs attached: Motor fan 18w, model: FE-VDE8W. New 100%.Item FOC.</productDesc>
+    </product>
+    <product>
+      <hsCode>85015219</hsCode>
+      <productDesc>3-phase fan motors for industrial use (capacity P: 800W) Used</productDesc>
+    </product>
+    <product>
+      <hsCode>84145930</hsCode>
+      <productDesc>Blowers, type: CX-150A, motor: 3.7kW, 3 phase, 220/380 VAC, 50Hz, which sx: Chuan Fan Electric Co., Ltd., a new line of 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>85013140</hsCode>
+      <productDesc>Air conditioner fan motor heat, Part No.: 871030K092, parts of cars Toyota INNOVA, the new 100%.</productDesc>
+    </product>
+    <product>
+      <hsCode>85013140</hsCode>
+      <productDesc>Air conditioner fan motor heat, Part No.: 8710302421, parts of cars Toyota COROLLA, 100% new.</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="fan motors - Import Data">
+    <product>
+      <hsCode>85030090</hsCode>
+      <productDesc>Parts of electric motors (motor) multi-phase alternating current signal Dolin:: Caps fan 5HP.Moi 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>85030090</hsCode>
+      <productDesc>Parts of electric motors (motor) multi-phase alternating current signal :: Caps fan Dolin 2HP-3HP.Moi 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>85030090</hsCode>
+      <productDesc>Parts of electric motors (motor) multi-phase alternating current signal Dolin:: Caps fan 1 / 2HP-1HP.Moi 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>85015219</hsCode>
+      <productDesc>3-phase fan motors for industrial use (capacity P: 800W) Used</productDesc>
+    </product>
+    <product>
+      <hsCode>85322500</hsCode>
+      <productDesc>Capacitors used in motors, fans, plastic B &amp; T 350v 6uF, new 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>85322500</hsCode>
+      <productDesc>Capacitors used in motors, fans, plastic B &amp; T 400V 4.75uF, 100% new goods</productDesc>
+    </product>
+    <product>
+      <hsCode>85322200</hsCode>
+      <productDesc>Capacitors used in motors, fans aluminum 370V 15aF, new 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>85322200</hsCode>
+      <productDesc>Capacitors used in motors, fans aluminum 370V 25aF, new 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>85322200</hsCode>
+      <productDesc>Capacitors used in motors, fans aluminum 370V 60aF, new 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>85322200</hsCode>
+      <productDesc>Capacitors used in motors, fans aluminum 370V 20aF, new 100%</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="fasteners - Import Data">
+    <product>
+      <hsCode>73182400</hsCode>
+      <productDesc>Fasteners metal for aircraft 11109165 - been producing: PANASONIC (Items of heading 9820 0000). New 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>73182400</hsCode>
+      <productDesc>Fasteners control airplane armrest metal RDAM701036 - have been producing: PANASONIC (heading 9820 0000 Items) new .Hang 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>39263000</hsCode>
+      <productDesc>Fasteners tail after plastic tiles PUSH CLIP, AIR DUCT INT 90601-PV3-0030 honda motorcycle components: SH 125cc Model: SH125E V</productDesc>
+    </product>
+    <product>
+      <hsCode>39262090</hsCode>
+      <productDesc>Fasteners kinds</productDesc>
+    </product>
+    <product>
+      <hsCode>83089090</hsCode>
+      <productDesc>Metal fasteners (1 set = 2 pieces)</productDesc>
+    </product>
+    <product>
+      <hsCode>73182400</hsCode>
+      <productDesc>Fasteners nghiep.YAM 80 122 sewing machine PIN PLATE CLOTH</productDesc>
+    </product>
+    <product>
+      <hsCode>82074000</hsCode>
+      <productDesc>Se tooth mold fasteners H9 (The Ministry = 2) (ECD of machine screws teeth se)</productDesc>
+    </product>
+    <product>
+      <hsCode>82074000</hsCode>
+      <productDesc>SKH9 se tooth mold fasteners (Ministry = 2 The) (ECD of machine screws teeth se)</productDesc>
+    </product>
+    <product>
+      <hsCode>82074000</hsCode>
+      <productDesc>M5X32X3.0 se tooth mold fasteners (Ministry = 2 The) (ECD of machine screws teeth se)</productDesc>
+    </product>
+    <product>
+      <hsCode>82074000</hsCode>
+      <productDesc>M5X44X3.0 se tooth mold fasteners (Ministry = 2 The) (ECD of machine screws teeth se)</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="fabric - Import Data">
+    <product>
+      <hsCode>60064290</hsCode>
+      <productDesc>100% polyester fabric K56 / 58</productDesc>
+    </product>
+    <product>
+      <hsCode>55121900</hsCode>
+      <productDesc>85% polyester15% nylon fabric K54 / 56</productDesc>
+    </product>
+    <product>
+      <hsCode>55121900</hsCode>
+      <productDesc>Fabric 80% wool17% nylon3% other K58 / 60</productDesc>
+    </product>
+    <product>
+      <hsCode>58079000</hsCode>
+      <productDesc>Label fabrics</productDesc>
+    </product>
+    <product>
+      <hsCode>58079000</hsCode>
+      <productDesc>Label fabrics</productDesc>
+    </product>
+    <product>
+      <hsCode>55159990</hsCode>
+      <productDesc>55% density fabric linen 45% rayon 51 '</productDesc>
+    </product>
+    <product>
+      <hsCode>60062200</hsCode>
+      <productDesc>Knitted fabric from cotton, k 64-66 '' (60% cotton fabric 40% polyester) (9773 yds)</productDesc>
+    </product>
+    <product>
+      <hsCode>60063290</hsCode>
+      <productDesc>Knitted fabrics from synthetic fiber, 59-61 k '' (100% polyester fabric) (5947 yds)</productDesc>
+    </product>
+    <product>
+      <hsCode>60063290</hsCode>
+      <productDesc>Knitted fabrics from synthetic fiber, 70-72 k '' (100% polyester fabric) (2630 yds)</productDesc>
+    </product>
+    <product>
+      <hsCode>60062200</hsCode>
+      <productDesc>Knitted fabric from cotton, k 64-66 '' (60% cotton fabric 20% polyester 20% rayon) (3474 yds)</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="fasteners piston - Import Data">
+    <product>
+      <hsCode>73182400</hsCode>
+      <productDesc>Fasteners steel piston - 13111-PWA-0000 - LK Cars HONDA CITY</productDesc>
+    </product>
+    <product>
+      <hsCode>73182400</hsCode>
+      <productDesc>Fasteners steel piston - 13111-RNA-A000 - Cars HONDA CRV LK</productDesc>
+    </product>
+    <product>
+      <hsCode>73182400</hsCode>
+      <productDesc>Fasteners steel piston - 13111-PNA-0000 - Cars HONDA CRV LK</productDesc>
+    </product>
+    <product>
+      <hsCode>73182400</hsCode>
+      <productDesc>Fasteners steel piston - 13111-RNA-A000 - LK Cars HONDA CIVIC</productDesc>
+    </product>
+    <product>
+      <hsCode>84099979</hsCode>
+      <productDesc>Fasteners piston accumulators for diesel engines of 175, 180, 185 (6, 8, 9HP)</productDesc>
+    </product>
+    <product>
+      <hsCode>84099979</hsCode>
+      <productDesc>Fasteners piston accumulators for diesel engines of 195, 1105, 1110, 1115 and 1125 (12, 18, 20, 24 and 26HP)</productDesc>
+    </product>
+    <product>
+      <hsCode>73182400</hsCode>
+      <productDesc>Fasteners steel piston - 13111-PWA-0000 - LK Cars HONDA CITY</productDesc>
+    </product>
+    <product>
+      <hsCode>73182400</hsCode>
+      <productDesc>Fasteners steel piston - 13111-PWA-0000 - LK Cars HONDA CITY</productDesc>
+    </product>
+    <product>
+      <hsCode>73182400</hsCode>
+      <productDesc>Fasteners steel piston - 13111-PWA-0000 - LK Cars HONDA CITY</productDesc>
+    </product>
+    <product>
+      <hsCode>84099138</hsCode>
+      <productDesc>13111-A04-A000-VN PISTON PIN Fasteners piston - Motorcycle Parts</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="fasteners screw - Import Data">
+    <product>
+      <hsCode>82074000</hsCode>
+      <productDesc>Se tooth mold fasteners H9 (The Ministry = 2) (ECD of machine screws teeth se)</productDesc>
+    </product>
+    <product>
+      <hsCode>82074000</hsCode>
+      <productDesc>SKH9 se tooth mold fasteners (Ministry = 2 The) (ECD of machine screws teeth se)</productDesc>
+    </product>
+    <product>
+      <hsCode>82074000</hsCode>
+      <productDesc>M5X32X3.0 se tooth mold fasteners (Ministry = 2 The) (ECD of machine screws teeth se)</productDesc>
+    </product>
+    <product>
+      <hsCode>82074000</hsCode>
+      <productDesc>M5X44X3.0 se tooth mold fasteners (Ministry = 2 The) (ECD of machine screws teeth se)</productDesc>
+    </product>
+    <product>
+      <hsCode>82074000</hsCode>
+      <productDesc>M4.8X60X16 se tooth mold fasteners (Ministry = 2 The) (ECD of machine screws teeth se)</productDesc>
+    </product>
+    <product>
+      <hsCode>82074000</hsCode>
+      <productDesc>M5.5X45X14 se tooth mold fasteners (Ministry = 2 The) (ECD of machine screws teeth se)</productDesc>
+    </product>
+    <product>
+      <hsCode>82074000</hsCode>
+      <productDesc>M6.5X38X10 se tooth mold fasteners (Ministry = 2 The) (ECD of machine screws teeth se)</productDesc>
+    </product>
+    <product>
+      <hsCode>82074000</hsCode>
+      <productDesc>M3.9X25X19 se tooth mold fasteners (Ministry = 2 The) (ECD of machine screws teeth se)</productDesc>
+    </product>
+    <product>
+      <hsCode>82074000</hsCode>
+      <productDesc>M4.2X45X18 se tooth mold fasteners (Ministry = 2 The) (ECD of machine screws teeth se)</productDesc>
+    </product>
+    <product>
+      <hsCode>82074000</hsCode>
+      <productDesc>M4.5X35X2.0 se tooth mold fasteners (Ministry = 2 The) (ECD of machine screws teeth se)</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="faucet - Import Data">
+    <product>
+      <hsCode>84818099</hsCode>
+      <productDesc>Sanitary faucets, 3/4 inch, bronze</productDesc>
+    </product>
+    <product>
+      <hsCode>84818099</hsCode>
+      <productDesc>1/2 inch sanitary faucets x 3 / 4inch, steel</productDesc>
+    </product>
+    <product>
+      <hsCode>84818099</hsCode>
+      <productDesc>Sanitary brass faucet, 1 / 2x3 / 4inch, Wall</productDesc>
+    </product>
+    <product>
+      <hsCode>84818099</hsCode>
+      <productDesc>Sanitary faucets, 3/4 inch, D = 150mm, brass</productDesc>
+    </product>
+    <product>
+      <hsCode>84818099</hsCode>
+      <productDesc>Sanitary faucets, 1/2-inch x 3 / 4inch, brass</productDesc>
+    </product>
+    <product>
+      <hsCode>84818099</hsCode>
+      <productDesc>Sanitary faucets, 3/8 inch, brass, together with key chain</productDesc>
+    </product>
+    <product>
+      <hsCode>84818099</hsCode>
+      <productDesc>Sanitary faucets, European type 2, 3 / 8inch, brass</productDesc>
+    </product>
+    <product>
+      <hsCode>84818059</hsCode>
+      <productDesc>Three-hole faucet copper crystal stones toiletries, Brand Mestre - 036201.000.00</productDesc>
+    </product>
+    <product>
+      <hsCode>84818059</hsCode>
+      <productDesc>Faucets single lever washbasin format type TKN34PBTN crome plated brass (with temperature control valve private water source, the nozzle may be extended by separate wires and leveling the type effluent), 100% brand new TOTO</productDesc>
+    </product>
+    <product>
+      <hsCode>39269099</hsCode>
+      <productDesc>Plastic pipes used for water filtration faucet JA2 kind 35127010Q03 / production of exported goods 15mm diameter, 80mm long</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="female blouses - Import Data">
+    <product>
+      <hsCode>62069000</hsCode>
+      <productDesc>92% female silk blouses 8% spandex 100% brand new Raoul (110034SXAG)</productDesc>
+    </product>
+    <product>
+      <hsCode>62069000</hsCode>
+      <productDesc>92% female silk blouses 8% spandex 100% brand new Raoul (11999SXBN!)</productDesc>
+    </product>
+    <product>
+      <hsCode>62069000</hsCode>
+      <productDesc>90% silk blouses female 4% polyester 6% spandex Raoul brand new 100% (110002SDFD)</productDesc>
+    </product>
+    <product>
+      <hsCode>61149000</hsCode>
+      <productDesc>39600257 female blouses MULTI 10 98% Cotton, 2% elastane brand Oasis</productDesc>
+    </product>
+    <product>
+      <hsCode>61149000</hsCode>
+      <productDesc>37100448 female blouses LIGHT NEUTRAL 08 100% Polyester Brand Oasis</productDesc>
+    </product>
+    <product>
+      <hsCode>61149000</hsCode>
+      <productDesc>37100448 female blouses LIGHT NEUTRAL 12 100% Polyester Brand Oasis</productDesc>
+    </product>
+    <product>
+      <hsCode>61149000</hsCode>
+      <productDesc>37100448 female blouses LIGHT NEUTRAL 10 100% Polyester Brand Oasis</productDesc>
+    </product>
+    <product>
+      <hsCode>61149000</hsCode>
+      <productDesc>44230881 female blouses WHITE Size 10 Cotton 100% Brand Warehouse</productDesc>
+    </product>
+    <product>
+      <hsCode>61149000</hsCode>
+      <productDesc>44230881 female blouses WHITE Size 08 Cotton 100% Brand Warehouse</productDesc>
+    </product>
+    <product>
+      <hsCode>61149000</hsCode>
+      <productDesc>44230881 female blouses 06 WHITE 100% Cotton Size Brand Warehouse</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="female bra - Import Data">
+    <product>
+      <hsCode>62121090</hsCode>
+      <productDesc>13A02FCRM bras brand Topshop female 100% Polyester</productDesc>
+    </product>
+    <product>
+      <hsCode>62129099</hsCode>
+      <productDesc>female bra PURPLE 100% nylon Patsy (Size 36C)</productDesc>
+    </product>
+    <product>
+      <hsCode>62129099</hsCode>
+      <productDesc>female bra PURPLE 100% nylon Patsy (Size 36B)</productDesc>
+    </product>
+    <product>
+      <hsCode>62129099</hsCode>
+      <productDesc>female bra PURPLE 100% nylon Patsy (Size 32B)</productDesc>
+    </product>
+    <product>
+      <hsCode>62129099</hsCode>
+      <productDesc>female bra PURPLE 100% nylon Patsy (Size 34B)</productDesc>
+    </product>
+    <product>
+      <hsCode>62129099</hsCode>
+      <productDesc>AMARA female bra 100% cotton BROWN (Size 34B)</productDesc>
+    </product>
+    <product>
+      <hsCode>62129099</hsCode>
+      <productDesc>AMARA female bra 100% cotton BROWN (Size 36C)</productDesc>
+    </product>
+    <product>
+      <hsCode>62129099</hsCode>
+      <productDesc>female bra PURPLE 100% nylon Patsy (Size 32C)</productDesc>
+    </product>
+    <product>
+      <hsCode>62129099</hsCode>
+      <productDesc>female bra PURPLE 100% nylon Patsy (Size 34C)</productDesc>
+    </product>
+    <product>
+      <hsCode>62129099</hsCode>
+      <productDesc>AMARA female bra 100% cotton BROWN (Size 34C)</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="female dress - Import Data">
+    <product>
+      <hsCode>62044900</hsCode>
+      <productDesc>PL female dress 100% brand new 100% Pinko (1B10EJ 4967 / NE1)</productDesc>
+    </product>
+    <product>
+      <hsCode>62044900</hsCode>
+      <productDesc>PL female dress 100% brand new 100% Pinko (1B10E8 4969 / EZ9)</productDesc>
+    </product>
+    <product>
+      <hsCode>62044900</hsCode>
+      <productDesc>PL female dress 100% brand new 100% Pinko (1B109X 4961 / NE1)</productDesc>
+    </product>
+    <product>
+      <hsCode>39263000</hsCode>
+      <productDesc>female 100% linen shirt dress Carven brand new 100% (260R68)</productDesc>
+    </product>
+    <product>
+      <hsCode>62044900</hsCode>
+      <productDesc>female 100% rayon dress sonia Rykiel brand new 100% (14E 11223430-22)</productDesc>
+    </product>
+    <product>
+      <hsCode>62044900</hsCode>
+      <productDesc>54% female dress 43% viscose 3% elastane acetate MSGM brand new line of 100% (144 112 1641 MDA42X)</productDesc>
+    </product>
+    <product>
+      <hsCode>62044200</hsCode>
+      <productDesc>Tommy female dress Style no .: 1657636331 Hilfiger- (100% cotton) - New 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>62044400</hsCode>
+      <productDesc>Tommy female dress Style no .: 1657635948 Hilfiger- (100% viscose) - New 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>62044400</hsCode>
+      <productDesc>Tommy female dress Style no .: 1657635949 Hilfiger- (100% viscose) - New 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>62044400</hsCode>
+      <productDesc>Tommy female dress Style no .: 1657636332 Hilfiger- (100% viscose) - New 100%</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="female jackets - Import Data">
+    <product>
+      <hsCode>62043900</hsCode>
+      <productDesc>100% PL female jackets Pinko brand new 100% (1G107X Z1KB / NH6)</productDesc>
+    </product>
+    <product>
+      <hsCode>62043900</hsCode>
+      <productDesc>34300729 female Jackets MULTI 06 98% Cotton, 2% elastane brand Oasis</productDesc>
+    </product>
+    <product>
+      <hsCode>62043900</hsCode>
+      <productDesc>84% female jackets VI 11% PA 5% EA 100% brand new Celine (25K145131)</productDesc>
+    </product>
+    <product>
+      <hsCode>62043900</hsCode>
+      <productDesc>34300729 female Jackets MULTI 06 98% Cotton, 2% elastane brand Oasis</productDesc>
+    </product>
+    <product>
+      <hsCode>62043900</hsCode>
+      <productDesc>34300729 female Jackets MULTI 08 98% Cotton, 2% elastane brand Oasis</productDesc>
+    </product>
+    <product>
+      <hsCode>62043900</hsCode>
+      <productDesc>34300729 female Jackets MULTI 10 98% Cotton, 2% elastane brand Oasis</productDesc>
+    </product>
+    <product>
+      <hsCode>62043900</hsCode>
+      <productDesc>34300729 female Jackets MULTI 12 98% Cotton, 2% elastane brand Oasis</productDesc>
+    </product>
+    <product>
+      <hsCode>62043900</hsCode>
+      <productDesc>45800020 female jackets BLUE Stripe Size 06 Acrylic 31%, Cotton 48%, 8% Nylon, Polyester 13% efficiency Warehouse</productDesc>
+    </product>
+    <product>
+      <hsCode>62043900</hsCode>
+      <productDesc>45800020 female jackets BLUE Stripe Size 08 Acrylic 31%, Cotton 48%, 8% Nylon, Polyester 13% efficiency Warehouse</productDesc>
+    </product>
+    <product>
+      <hsCode>62043900</hsCode>
+      <productDesc>45800020 female jackets BLUE Stripe Size 10 Acrylic 31%, Cotton 48%, 8% Nylon, Polyester 13% efficiency Warehouse</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="female pants - Import Data">
+    <product>
+      <hsCode>62089990</hsCode>
+      <productDesc>43B16FRED Female pants 95% Cotton, 5% elastane brand Topshop</productDesc>
+    </product>
+    <product>
+      <hsCode>62089990</hsCode>
+      <productDesc>43B78FPNK Female pants 95% Cotton, 5% elastane brand Topshop</productDesc>
+    </product>
+    <product>
+      <hsCode>62089990</hsCode>
+      <productDesc>Female pants 43G55FRST 9% elastane, 91% Polyamide brand Topshop</productDesc>
+    </product>
+    <product>
+      <hsCode>62089990</hsCode>
+      <productDesc>Female pants 43G33FBLK 9% elastane, 91% Polyamide brand Topshop</productDesc>
+    </product>
+    <product>
+      <hsCode>62089990</hsCode>
+      <productDesc>Female pants 43G37EOXB 8% elastane, 92% Polyamide brand Topshop</productDesc>
+    </product>
+    <product>
+      <hsCode>62089990</hsCode>
+      <productDesc>Female pants 43F15FCRN 13% elastane, 87% Polyamide brand Topshop</productDesc>
+    </product>
+    <product>
+      <hsCode>62089990</hsCode>
+      <productDesc>Female pants 43G31FBLK 10% elastane, 90% Polyamide brand Topshop</productDesc>
+    </product>
+    <product>
+      <hsCode>62089990</hsCode>
+      <productDesc>Female pants 43G41ENUD 15% elastane, 85% Polyamide brand Topshop</productDesc>
+    </product>
+    <product>
+      <hsCode>62089990</hsCode>
+      <productDesc>Female pants 43G42ERST 12% elastane, 88% Polyamide brand Topshop</productDesc>
+    </product>
+    <product>
+      <hsCode>62089990</hsCode>
+      <productDesc>Female pants 43G42FNUD 13% elastane, 87% Polyamide brand Topshop</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="female shorts - Import Data">
+    <product>
+      <hsCode>62121090</hsCode>
+      <productDesc>Pants female orthopedic (tight shorts) Brand: nymphs. (25% Nylon, 74% Spandex, 1% Polyester)</productDesc>
+    </product>
+    <product>
+      <hsCode>62121090</hsCode>
+      <productDesc>Shorts female orthopedic (tight shorts) Brand: nymphs. (25% Nylon, 74% Spandex, 1% Polyester)</productDesc>
+    </product>
+    <product>
+      <hsCode>62046900</hsCode>
+      <productDesc>Shorts 30% female 70% LI SE 100% brand new Acne (18F136)</productDesc>
+    </product>
+    <product>
+      <hsCode>61046900</hsCode>
+      <productDesc>2912303 female shorts Brand New Look (100% polyester), new 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>62046900</hsCode>
+      <productDesc>100% silk female shorts by sonia Sonia brand new 100% (14E81436318-12)</productDesc>
+    </product>
+    <product>
+      <hsCode>62046900</hsCode>
+      <productDesc>100% virgin female shorts saint laurent brand new wool 100% (342 061 YA24B 1000)</productDesc>
+    </product>
+    <product>
+      <hsCode>61149000</hsCode>
+      <productDesc>Capri pants male and female cotton (shorts male 385 female, Brand: EVO; 171 female female shorts, Brand: WYNN)</productDesc>
+    </product>
+    <product>
+      <hsCode>62046900</hsCode>
+      <productDesc>34600151 Shorts 65% Polyester 08 MULTI female, 35% elastane brand Oasis</productDesc>
+    </product>
+    <product>
+      <hsCode>62046200</hsCode>
+      <productDesc>female cloth shorts 95% VI 5% EA 100% brand new Versace - A68611-A213360-A7460</productDesc>
+    </product>
+    <product>
+      <hsCode>61046300</hsCode>
+      <productDesc>Red female shorts brand Valentino (GR00A8A0-V40782R0), CO 100</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="female skirt - Import Data">
+    <product>
+      <hsCode>62044200</hsCode>
+      <productDesc>Woven skirt 37% female 58% COTTON 5% elastane rayon, 100% new Ralph Lauren brand, item code 3866005TOLDR</productDesc>
+    </product>
+    <product>
+      <hsCode>62044200</hsCode>
+      <productDesc>Woven skirt 37% female 58% COTTON 5% elastane rayon, 100% new Ralph Lauren brand, item code 3866005TOLDR</productDesc>
+    </product>
+    <product>
+      <hsCode>62044200</hsCode>
+      <productDesc>Woven skirt 37% female 58% COTTON 5% elastane rayon, 100% new Ralph Lauren brand, item code 3866005TOLDR</productDesc>
+    </product>
+    <product>
+      <hsCode>62044200</hsCode>
+      <productDesc>Woven skirt 37% female 58% COTTON 5% elastane rayon, 100% new Ralph Lauren brand, item code 3866005TOLDR</productDesc>
+    </product>
+    <product>
+      <hsCode>62044200</hsCode>
+      <productDesc>Woven skirt 37% female 58% COTTON 5% elastane rayon, 100% new Ralph Lauren brand, item code 3866005TOLDR</productDesc>
+    </product>
+    <product>
+      <hsCode>62045200</hsCode>
+      <productDesc>Woven skirt 37% female 58% COTTON 5% elastane rayon, 100% new Ralph Lauren brand, item code 3866003SANLSK</productDesc>
+    </product>
+    <product>
+      <hsCode>62045200</hsCode>
+      <productDesc>Woven skirt 37% female 58% COTTON 5% elastane rayon, 100% new Ralph Lauren brand, item code 3866003SANLSK</productDesc>
+    </product>
+    <product>
+      <hsCode>62045200</hsCode>
+      <productDesc>Woven skirt 37% female 58% COTTON 5% elastane rayon, 100% new Ralph Lauren brand, item code 3866003SANLSK</productDesc>
+    </product>
+    <product>
+      <hsCode>62045200</hsCode>
+      <productDesc>Woven skirt 37% female 58% COTTON 5% elastane rayon, 100% new Ralph Lauren brand, item code 3866003SANLSK</productDesc>
+    </product>
+    <product>
+      <hsCode>62045200</hsCode>
+      <productDesc>Woven skirt 37% female 58% COTTON 5% elastane rayon, 100% new Ralph Lauren brand, item code 3866003SANLSK</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="fennel seeds - Import Data">
+    <product>
+      <hsCode>09096190</hsCode>
+      <productDesc>fennel seeds (Fennel seed) used as spices, new 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>09096190</hsCode>
+      <productDesc>McCORMICK FENNEL anise seeds SD WH 6 / 14oz. HSD Sept 21 2016</productDesc>
+    </product>
+    <product>
+      <hsCode>09096190</hsCode>
+      <productDesc>Fennel seeds</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="ferric chloride - Import Data">
+    <product>
+      <hsCode>38220090</hsCode>
+      <productDesc>2319800 Ministry to determine the amount of reagents used in the laboratory Chloride include: ferric perchlorate, demineralized water, perchloric acid, mercuric thiocyanate, methyl alcohol</productDesc>
+    </product>
+    <product>
+      <hsCode>28273920</hsCode>
+      <productDesc>Materials for manufacturing electronic circuit boards, Ferric Chloride Solution FeCl3-iron chloride solution</productDesc>
+    </product>
+    <product>
+      <hsCode>28273920</hsCode>
+      <productDesc>Ferric Chloride 96% min anhydrous FeCl3. Chemicals used in the plating industry. (New 100%).</productDesc>
+    </product>
+    <product>
+      <hsCode>28273920</hsCode>
+      <productDesc>IRON (III) CHLORIDE (FeCl3) Trade Name (ferric CHLORIDE (anhydrous), chemicals used in wastewater treatment. Goods closed heterogeneous 50Kg / barrel, a new 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>28273920</hsCode>
+      <productDesc>Ferric chloride hexahydrate - Recipe: FeCl3.6H2O - 0.5kg / Bottle</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="ferro silicon - Import Data">
+    <product>
+      <hsCode>72022100</hsCode>
+      <productDesc>Ferro-silicon alloys (FeSi) 72%. Si content of&gt; = 72% lumpy, particle size &lt;= 100 mm. Net weight 156 156 tons are packed in bags. New 100% due TQSX</productDesc>
+    </product>
+    <product>
+      <hsCode>72022100</hsCode>
+      <productDesc>Ferro-silicon alloys (FeSi) 75%. Si content of&gt; = 75%, lumpy, particle size &lt;= 100 mm. Net weight of 97 117 tonnes was closed bag. New 100% due TQSX</productDesc>
+    </product>
+    <product>
+      <hsCode>72022100</hsCode>
+      <productDesc>Ferro-silicon (FeSi) 72% (SI&gt; = 72%), lumpy, particle size &lt;= 100mm.Hang uniformity are packed in net weight: 1000kg / bag, 100% new goods exported by China sn</productDesc>
+    </product>
+    <product>
+      <hsCode>72022100</hsCode>
+      <productDesc>Ferro-silicon (FeSi) 72% (SI&gt; = 72%), lumpy, particle size &lt;= 100mm.Hang uniformity are packed in net weight: 1000kg / bag, 100% new goods exported by China sn</productDesc>
+    </product>
+    <product>
+      <hsCode>72022100</hsCode>
+      <productDesc>Ferro-silicon (FeSi) 72% (SI&gt; = 72%), lumpy, particle size &lt;= 100mm.Hang uniformity are packed in net weight: 1000kg / bag, 100% new goods exported by China sn</productDesc>
+    </product>
+    <product>
+      <hsCode>72022100</hsCode>
+      <productDesc>Ferro Silicon, Si concentration&gt; = 75% of CN .Dung metallurgy, goods originating in China, a new line of 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>72022100</hsCode>
+      <productDesc>Ferro-silicon (FeSi) 75% (SI&gt; = 75%) book Department, particle size &lt;= 100 mm. Items with a total weight of 160 tons are packed in 160 bags. New 100% due TQSX</productDesc>
+    </product>
+    <product>
+      <hsCode>72022100</hsCode>
+      <productDesc>Ferro-silicon (FeSi) 75% (SI&gt; = 75%), lumpy, particle size &lt;= 100mm.Hang uniformity are packed in net weight: 1000kg / bag, 100% new goods exported by China sn</productDesc>
+    </product>
+    <product>
+      <hsCode>72022100</hsCode>
+      <productDesc>Ferro-silicon (FeSi) 75% (SI&gt; = 75%), lumpy, particle size &lt;= 100 mm.Items with a total weight of 160 bags 160Tan closed. New 100% due TQSX</productDesc>
+    </product>
+    <product>
+      <hsCode>72022100</hsCode>
+      <productDesc>Ferro-silicon (FeSi) 72% (SI&gt; = 72%), lumpy, particle size &lt;= 100mm.Hang uniformity are packed in net weight: 1000kg / bag, 100% new goods exported by China sn</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="fertilizer - Import Data">
+    <product>
+      <hsCode>31022100</hsCode>
+      <productDesc>Fertilizer SA (Ammonium Sulphate) N&gt; = 20.5%; S&gt; = 24% Packaging specifications 50kg / ba0. TQSX</productDesc>
+    </product>
+    <product>
+      <hsCode>31022100</hsCode>
+      <productDesc>Fertilizer SA (ammonium sulphate) (NH4) 2S04 N&gt; = 20.5% S&gt; = 24%; H2O &lt;= 1.0% weight 50kg / bag by TQSX</productDesc>
+    </product>
+    <product>
+      <hsCode>31022100</hsCode>
+      <productDesc>Fertilizer SA (ammonium sulphate) (NH4) 2S04 N&gt; = 20.5% S&gt; = 24%; H2O &lt;= 1.0% weight 50kg / bag by TQSX</productDesc>
+    </product>
+    <product>
+      <hsCode>31059000</hsCode>
+      <productDesc>GROW MORE foliar fertilizer 20-30-20 (No Dye); 50Lb / Bag; 440 Covered; New 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>31059000</hsCode>
+      <productDesc>GROW MORE foliar fertilizer 20-20-20 (Yellow Dye); 50Lb / Bag; 400 Covered; New 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>31042000</hsCode>
+      <productDesc>Fertilizer Potassium (K20&gt; = 60%, Moisture &lt;= 1%), consistent packaged goods weight 50kg / bag</productDesc>
+    </product>
+    <product>
+      <hsCode>31022100</hsCode>
+      <productDesc>Amonium Sulphate Fertilizer (SA) Chemical formula (NH4) 2SO4. N&gt; = 20.5%, S&gt; = 24%, H2O &lt;= 1%. Packed in PE / PP weight 50kg / bag. Made in China</productDesc>
+    </product>
+    <product>
+      <hsCode>31042000</hsCode>
+      <productDesc>Fertilizer Potassium (K20&gt; = 60%, Moisture &lt;= 1%), consistent packaged goods weight 50kg / bag</productDesc>
+    </product>
+    <product>
+      <hsCode>31042000</hsCode>
+      <productDesc>Potassium chloride fertilizer (K2O) - Granular muriate of potash Pink color (GMOP) - (Item amnesty) TP: K2O: 61% (+/- 1% Point);Moisture: 0.5% Max. Great charcoal 4mm - 5% Max. 2mm - 4mm - 85% Min. Less than 2 mm - 10% Max. Less than 1mm - 2% Max.</productDesc>
+    </product>
+    <product>
+      <hsCode>31042000</hsCode>
+      <productDesc>Potassium chloride fertilizer (K2O) - Standard muriate of potash (SMOP) - (Item amnesty) TP: K2O: 61% (+/- 1% Point); Moisture: 0.5% Max.</productDesc>
+    </product>
+  </productGroup>
+  <productGroup name="fasteners lace - Import Data">
+    <product>
+      <hsCode>73181500</hsCode>
+      <productDesc>fasteners (bolt &amp; nut, had laces, DK: 5mm, specification: M5 * 10 + W + SW (8)</productDesc>
+    </product>
+    <product>
+      <hsCode>73181500</hsCode>
+      <productDesc>fasteners (bolt &amp; nut, had laces, DK: 5mm, specification: M5 * 12 + W + SW (10)</productDesc>
+    </product>
+    <product>
+      <hsCode>73181500</hsCode>
+      <productDesc>fasteners (bolt &amp; nut, had laces, DK: 5mm, specification: M5 * 10 + W + SW (6)</productDesc>
+    </product>
+    <product>
+      <hsCode>73181500</hsCode>
+      <productDesc>fasteners (bolt &amp; nut, had laces, DK: 5mm, specification: M5 * 10 (4)</productDesc>
+    </product>
+    <product>
+      <hsCode>73181500</hsCode>
+      <productDesc>fasteners (bolt &amp; nut, had laces, DK: 6mm, specification: M6 * 16 + W + SW (8)</productDesc>
+    </product>
+    <product>
+      <hsCode>84807990</hsCode>
+      <productDesc>Mould rolled lace (used in rolling mills tooth fasteners) (25 x 70 x 90) mm - Threading Die (25 x 70 x 90) mm, (Ministry / 2 female), New 100%</productDesc>
+    </product>
+    <product>
+      <hsCode>73181500</hsCode>
+      <productDesc>fasteners (bolt &amp; nut, had laces, DK: 6mm, specification: M6 * 16 (4)</productDesc>
+    </product>
+    <product>
+      <hsCode>73181500</hsCode>
+      <productDesc>fasteners (bolt &amp; nut, had laces, DK: 5mm, specification: M5 * 10 (4)</productDesc>
+    </product>
+    <product>
+      <hsCode>73181500</hsCode>
+      <productDesc>fasteners (bolt &amp; nut, had laces, DK: 6mm, specification: M6 * 12 + W (4)</productDesc>
+    </product>
+    <product>
+      <hsCode>73181500</hsCode>
+      <productDesc>fasteners (bolt &amp; nut, had laces, DK: 6mm, specification: M6 * 16 + W + SW (8)</productDesc>
+    </product>
+  </productGroup>
+</root>
